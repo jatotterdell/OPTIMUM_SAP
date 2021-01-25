@@ -53,7 +53,7 @@
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-
+\usepackage{enumitem}
 \usepackage{marginnote}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -361,10 +361,13 @@ The primary objective, outcome and estimand is summarised in Table \ref{tab:obje
 \begin{table}[!ht]
 	\caption{Primary objective, estimand, and outcome.}
 	\label{tab:objective-estimands-outcomes-primary}
-	\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+	\begin{tabular}{p{3cm}p{4.25cm}p{4.25cm}}
 		Objective & Estimand & Outcome \\ \hline
 		To determine whether, compared to three priming doses of aP, a mixed wP/aP schedule (first dose of wP followed by doses of aP) protects against the development of IgE-mediated food allergy.
-	& \textbf{Population:} The population of infants as defined by the protocol inclusion/exclusion criteria. \newline \textbf{Treatment:} The effect of being assigned to the planned vaccination policy. \newline \textbf{Summary:} The proportion of participants with the primary outcome compared between the two planned treatment regimens.
+	& \textbf{Population:} The population of infants as defined by the protocol inclusion/exclusion criteria. \newline 
+	\textbf{Treatment:} The effect of being assigned to the planned vaccination policy. \newline 
+	\textbf{Summary:} The relative proportion of participants with the primary outcome compared between the two planned treatment regimens. \newline
+	\textbf{Intercurrent Events:} Any ICEs will be handled will be handled by the treatment policy approach. DEATH (IF ANY) AS TREATMENT FAILURE? I.E. ALLERGY?
 		&
 		IgE-mediated food allergy at the age of 12 months and confirmed, where necessary by oral food challenge (OFC), before 18 months.
 		A participant will be considered to have the outcome if there is evidence of sensitisation to a food on skin prick test (SPT), and either:
@@ -380,7 +383,7 @@ The primary objective, outcome and estimand is summarised in Table \ref{tab:obje
 
 The secondary objectives, outcomes and estimands are summarised in Tables \ref{tab:objective-estimands-outcomes-clinical-mechanistic}.
 Some of these secondary objectives are assessed only in a subset of the enrolled participants.
-The stage 1 laboratory outcomes are only assessed in the first 150 participants enrolled into the study under the stage 1 protocol, and stage 2 laboratory outcomes are only assessed in the first 300 participants enrolled into a particular site under the stage 2 protocol.
+The stage 1 laboratory outcomes are only assessed in the first 150 participants enrolled into the study under the stage 1 protocol, and stage 2 laboratory outcomes are only assessed in the first 300 participants enrolled into a particular site under the stage 1 and 2 protocols.
 
 \begin{table}[!ht]
 	\caption{Secondary clinical and mechanistic objectives, estimands, and outcomes.}
@@ -389,19 +392,21 @@ The stage 1 laboratory outcomes are only assessed in the first 150 participants 
 		Objective & Estimands & Outcomes \\ \hline
 		\textbf{Clinical} & & \\
 		Clinical allergy: to compare the rate of new onset atopic dermatitis in each study group. &
-		The population of infants as defined by the protocol inclusion/exclusion criteria.\newline
-		The effect of being assigned to the planned vaccination policy.\newline
-		The proportion of participants with the outcome compared between the two planned treatment regimens. &
-		A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 6 months of age and a positive SPT to any allergen by approximately 12 months of age.\newline
-		A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 12 months of age and a positive SPT to any allergen by approximately 12 months of age.
+		\textbf{Population:} All randomised participants as defined by the protocol inclusion/exclusion criteria.\newline
+		\textbf{Treatment:} Assignment to the planned vaccination policy. \newline
+		\textbf{Summary:} The relative proportion of participants with the outcome compared between the two treatments. \newline
+		\textbf{Intercurrent Events:} Any ICEs will be handled will be handled by the treatment policy approach.  &
+		\textbf{1.} A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 6 months of age and a positive SPT to any allergen by approximately 12 months of age.\newline
+		\textbf{2.} A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 12 months of age and a positive SPT to any allergen by approximately 12 months of age.
 		\\
 		\textbf{Mechanstic} & & \\
 		Allergic sensitisation: to compare the rate of SPT positivity to common allergens in each study group. &
-		The population of infants as defined by the protocol inclusion/exclusion criteria.\newline
-		The effect of being assigned to the planned vaccination policy.\newline
-		The proportion of participants with the outcome compared between the two planned treatment regimens. &
-		A SPT >1mm greater than the negative control to at least one allergen by approximately 12 months of age.\newline
-		A SPT $\geq$3mm greater than the negative control to at least one allergen by approximately 12 months of age.
+		\textbf{Population:} All randomised participants as defined by the protocol inclusion/exclusion criteria.\newline
+		\textbf{Treatment:} Assignment to the planned vaccination policy. \newline
+		\textbf{Summary:} The relative proportion of participants with the outcome compared between the treatments. \newline
+		\textbf{Intercurrent Events:} Any ICEs will be handled will be handled by the treatment policy approach.  &
+		\textbf{1.} A SPT $>$1mm greater than the negative control to at least one allergen by approximately 12 months of age.\newline
+		\textbf{2.} A SPT $\geq$3mm greater than the negative control to at least one allergen by approximately 12 months of age.
 		\\
 		\hline
 	\end{tabular}
@@ -410,49 +415,53 @@ The stage 1 laboratory outcomes are only assessed in the first 150 participants 
 \begin{table}[!ht]
 	\caption{Secondary objectives, estimands, and outcomes.}
 	\label{tab:objective-estimands-outcomes-laboratory}
-	\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+	\begin{tabular}{p{3cm}p{4.25cm}p{4.25cm}}
 		Objective & Estimands & Outcomes \\ \hline
 		\textbf{Stage 1-specific laboratory} & &  \\
 		Atopic immunophenotype: To compare the Th2 immunophenotypic response to tetanus toxoid and egg	antigens in infants in each	study group. &
 		The population of infants with no contraindications as defined by the protocol inclusion, exclusion, and elimination criteria. \newline 
 		The effect of the planned vaccination policy. \newline
 		At blood collection visits 3 and 5 (stage 1), for each outcome compare between the two treatment groups:
-		\begin{itemize}
+		\begin{itemize}[leftmargin=0.5cm]
 			\item Geometric mean concentration (GMC) in kU/L
 			\item \marginnote{\textit{NOTE: These outcomes condition on post-randomisation response at visit 3}}Geometric mean fold rise (GMFR) from visit 3 to visit 5
 			\item Proportion of participants achieving $\geq$4-fold rise from visit 3 to visit 5
 		\end{itemize} &
-		Total IgE concentration\newline 
-		IgE concentration to tetanus toxoid\newline 
-		IgE concentration to egg white-specific antigen \newline 
-		IgE concentration to whole egg-specific antigen \\
+		\textbf{1.} Total IgE concentration\newline 
+		\textbf{2.} IgE concentration to tetanus toxoid\newline 
+		\textbf{3.} IgE concentration to egg white-specific antigen \newline 
+		\textbf{4.} IgE concentration to whole egg-specific antigen \\
 		Determine if vaccine responses differ in each study group &
 		As above, but at blood collection visits 3, 5, 7 and 8 (stage 1), for each outcome compare between the two treatment groups:
-		\begin{itemize}
+		\begin{itemize}[leftmargin=0.5cm]
 			\item GMC in IU/mL
 			\item \marginnote{\textit{NOTE: These outcomes condition on post-randomisation response at visit 3}}GMFR from visit 3 to visit 5, 7, and 8.
 			\item Proportion of participants achieving $\geq$4-fold rise from visit 3 to visits 5, 7, and 8.
 		\end{itemize} &
-		Pertussis toxin (PT) specific IgG\newline 
-		Filamentous haemagglutinin (FHA) specific IgG\newline 
-		Pertactin (PRN) specific IgG
+		\begin{enumerate}[leftmargin=*, labelsep=-0.1cm]
+			\item Pertussis toxin (PT) specific IgG
+			\item Filamentous haemagglutinin (FHA) specific IgG
+			\item Pertactin (PRN) specific IgG
+		\end{enumerate}
 		\\
 		& 		
 		As above, for each outcome compare between the two treatment groups: 
-		\begin{itemize}
+		\begin{itemize}[leftmargin=0.5cm]
 			\item GMC in IU/mL
 			\item Proportion of participants with concentrations greater than defined thresholds at visits 5, 7, and 8
 		\end{itemize} &
-		Pneumococcal vaccine serotype specific IgG\newline 
-		Polyribosylribitol phosphate (PRP, capsular polysaccharide of HiB) specific IgG\newline 
-		Tetanus toxoid specific IgG
+		\begin{enumerate}[leftmargin=*, labelsep=-0.1cm]
+			\item Pneumococcal vaccine serotype specific IgG
+			\item Polyribosylribitol phosphate (PRP, capsular polysaccharide of HiB) specific IgG
+			\item Tetanus toxoid specific IgG
+		\end{enumerate}
 		\\
 		\textbf{Stage 2-specific laboratory} & &  \\
 		Determine if vaccine responses differ in each study group. &
 		The population of infants with no contraindications as defined by the protocol inclusion, exclusion, and elimination criteria. \newline 
 		The effect of the planned vaccination policy.\newline
 		For the outcome, to compare between the two treatment groups at visits 3 and 4 (stage 2):
-		\begin{itemize} 
+		\begin{itemize}[leftmargin=0.5cm]
 			\item GMC in IU/mL
 			\item GMFR from visit 3 to 4
 			\item Proportion with a $\geq$4-fold rise from visit 3 to 4
@@ -616,10 +625,8 @@ For each outcome and visit, we will report by treatment group for the stage 1 an
 	\item Kaplan-Meier plots of concentrations
 \end{itemize}
 
-For inferences, the mean concentrations (and 95\% CrI) will be estimated using censored linear mixed models assuming that concentrations are log-normally distributed with a fixed treatment effect, fixed effects for visit, interactions between visit and treatment, and participant specific effects. Sensitivity analyses will investigate serial correlation and heterogeneity of variances by visit schedule.
-
-(ALTERNATIVELY, PERHAPS PREFERABLY, MODEL LOG CONCENTRATIONS AS CENSORED MULTIVARIATE NORMAL WITH UNSTRUCTURED COVARIANCE, SENSITIVITY ANALYSES VARYING THE ASSUMED COVARIANCE STRUCTURE)
-
+For inferences, the mean concentrations (and 95\% CrI) will be estimated using censored linear mixed models assuming that concentrations are log-normally distributed with a fixed treatment effect, fixed effects for visit, interactions between visit and treatment, and participant specific effects.
+Sensitivity analyses will investigate serial correlation and heterogeneity of variances by visit schedule.
 
 \subsection*{Subgroup Analyses}
 
@@ -758,6 +765,8 @@ The University of Sydney is the trial sponsor, being the institution that assume
 \textbf{DTwP:} diphtheria tetanus whole-cell pertussis 
 
 \textbf{IA:} interim analysis/analyses
+
+\textbf{ICE:} intercurrent event
 
 \textbf{ITT:} intention-to-treat
 
