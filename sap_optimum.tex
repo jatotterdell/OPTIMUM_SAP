@@ -464,7 +464,7 @@ Summaries of the following baseline data will be included:
 
 The planned analysis populations are defined as in Table \ref{tab:analysis-sets}.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 	\caption{Pre-defined analysis sets to be used in summaries and analyses.}
 	\label{tab:analysis-sets}
 	\begin{tabular}{lp{8cm}}
@@ -553,9 +553,7 @@ For each outcome and visit, we will report by treatment group for the stage 1 an
 \end{itemize}
 
 For inferences, the mean concentrations (and 95\% CrI) will be estimated using censored linear mixed models assuming that concentrations are log-normally distributed with a fixed treatment effect, fixed effects for visit, interactions between visit and treatment, and participant specific effects.
-
-(ALTERNATIVELY, PERHAPS PREFERABLY, MODEL LOG CONCENTRATIONS AS CENSORED MULTIVARIATE NORMAL WITH UNSTRUCTURED COVARIANCE, SENSITIVITY ANALYSES VARYING THE ASSUMED COVARIANCE STRUCTURE)
-
+Sensitivity analyses will investigate serial correlation and heterogeneity of variances by visit schedule.
 
 \subsection*{Subgroup Analyses}
 
@@ -647,7 +645,7 @@ Expected success thresholds were fixed across all interim analyses and set to $\
 
 The scenarios explored are summarised in Table \ref{tab:scenarios}.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 	\caption{Summary of trial scenarios explored.}
 	\label{tab:scenarios}
 	\begin{tabular}{ll}
@@ -771,46 +769,46 @@ Text for this section\ldots
 
 \section*{Figures}
 
-\begin{figure}[h!] 	  	  	  
+\begin{figure}[!ht] 	  	  	  
 	\caption{Example accrual assuming 16 enrolees per week on average.}
 	\label{fig:accrual-16}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under constant 16 per week accrual.}
 	\label{fig:decisions-16}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \caption{Probability of the trial stopping at each stage for either expected success or futility, under constant 16 per week accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-16}
 \end{figure}
 
 
-\begin{figure}[h!] 	  	  	  
+\begin{figure}[!ht] 	  	  	  
 	\caption{Example accrual assuming 5 enrolees per week on average.}
 	\label{fig:accrual-5}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under constant 5 per week accrual.}
 	\label{fig:decisions-5}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\caption{Probability of the trial stopping at each stage for either expected success or futility, under constant 5 per week accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-5}
 \end{figure}
 
-\begin{figure}[h!] 	  	  	  
+\begin{figure}[!ht] 	  	  	  
 	\caption{Example ramp-up accrual.}
 	\label{fig:accrual-ru}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under ramp-up accrual.}
 	\label{fig:decisions-ru}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\caption{Probability of the trial stopping at each stage for either expected success or futility, under ramp-up accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-ru}
 \end{figure}
 
