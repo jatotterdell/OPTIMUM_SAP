@@ -47,7 +47,7 @@
 
 %%% Load packages
 \usepackage{amsthm,amsmath,amsfonts}
-%\RequirePackage[numbers]{natbib}
+\RequirePackage[numbers]{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
 %\RequirePackage{hyperref}
 \usepackage[utf8]{inputenc} %unicode support
@@ -414,8 +414,8 @@ A participant will be considered to have the outcome if there is evidence of sen
 		\item Polyribosylribitol phosphate (PRP, capsular polysaccharide of HiB)
 	\end{enumerate}
 	The putative protective thresholds for pertussis toxin and filamentous haemagglutinin-specific IgG are set at $\geq 5$ IU/mL,
-	seroprotective IgG titres for tetanus toxoid at $\geq0.1$ IU/mL, Hib-PRP at $\geq$1.0 $\mu$g/mL
-	and for all 13-valent pneumococcal vaccine serotypes at $\geq 0.35$ $\mu$g/mL. GET REFERENCES FROM PROTOCOL
+	seroprotective IgG titres for tetanus toxoid at $\geq0.1$ IU/mL \cite{whotetanus}, Hib-PRP at $\geq$1.0 $\mu$g/mL \cite{kayhty1983protective}
+	and for all 13-valent pneumococcal vaccine serotypes at $\geq 0.35$ $\mu$g/mL \cite{siber2007estimating,whopneumo}.
 \end{enumerate}
 
 
@@ -572,7 +572,8 @@ For each outcome (concentrations and titres), we will report by treatment group 
 \end{itemize}
 
 For inferences, the mean log-concentrations and log-titres (and 95\% CrI) will be estimated and compared using censored linear mixed models assuming that concentrations are log-normally distributed with a fixed treatment effect, fixed effects for visit, interactions between visit and treatment, and participant specific effects (random intercepts).
-Sensitivity analyses will investigate additional model complexity for serial correlation and heterogeneity of variances by visit schedule.
+Sensitivity analyses will investigate additional model complexity allowing for serial correlation and heterogeneity of variances by visit schedule by specifying an unstructured covariance.
+If issues arise with this covariance structure, a simpler covariance model will be assumed, such as heterogenous compound symmetry.
 
 \subsection*{Subgroup Analyses}
 
@@ -632,11 +633,19 @@ where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ as selected by
 
 \subsection*{Missing Data}
 
-...
+Reasons for missingness will be summarised.
+Patterns and predictors of missingness will also be investigated and summarised.
+Descriptive and summary statistics will generally be based on complete-cases data.
+The primary analyses will be based on complete-cases.
+Secondary analyses using multiple imputation for missing responses and covariates will be undertaken to investigate sensitivity of the results.
+TIPPING POINT ANALYSIS? 
 
 \subsection*{Sensitivity Analyses}
 
-...
+Sensitivity of results to the specified priors will be investigated by estimating parameters under different 
+prior configurations than those used in the primary analyses.
+In particular, the hyperparameter for prior variances will be varied to assess 
+how conclusions may change under varying strength of the prior.
 
 \section*{Operating Characteristics}
 
