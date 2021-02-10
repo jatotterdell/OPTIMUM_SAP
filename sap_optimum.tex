@@ -390,34 +390,45 @@ A participant will be considered to have the outcome if there is evidence of sen
 	\end{enumerate}
 \end{enumerate}
 
-\subsubsection*{Stage 1 and 2 laboratory outcomes}
+\subsubsection*{Stage 1 atopic immunophenotypic response}
 
 \begin{enumerate}[resume]
 	\item Compare the Th2 immunophenotypic response to tetanus toxoid and egg antigens in infants in each study group.
 	IgE concentrations to the following antigens will be collected at ages 6, 7 and 19 months using ImmunoCAP total and specific IgE assays (Thermo Fisher Scientific/Phadia, Uppsala, Sweden) during stage 1 only (150 participants):
 	\begin{enumerate}
 		\item Total IgE concentration
-		\item IgE concentration to tetanus toxoid
-		\item IgE concentration to egg white-specific antigen
-		\item IgE concentration to whole egg-specific antigen
+		\item IgE concentration to tetanus toxoid (TT) vaccine antigen
+		\item IgE concentration to egg white antigen
+		\item IgE concentration to whole egg antigen
 	\end{enumerate}
+	Assays will be in KU IgE/L per sample.
 	IgE levels $\geq$ 0.35 KU/L are considered positive.
-	\item Compare vaccine antibody responses.
-	Vaccine antigen-specific IgG titres will be measured at ages 6, 7, and 18, and 19 months using a multiplex fleuoresenct bead assay \cite{van2008development}, for the following during stage 1 (and 150 participants in stage 2 for pertussis toxin only)"
-	\begin{enumerate}
-		\item Pertussis toxin (PT) (stage 1 and 2 - 300 participants)
-		\item Filamentous haemagglutinin (FHA)
-		\item Pertactin (PRN)
-		\item Fimbriae agglutinogens 2-3
-		\item Tetanus toxoid
-		\item 13-valent pneumococcal vaccine serotypes
-		\item Polyribosylribitol phosphate (PRP, capsular polysaccharide of HiB)
-	\end{enumerate}
-	The putative protective thresholds for pertussis toxin and filamentous haemagglutinin-specific IgG are set at $\geq 5$ IU/mL,
-	seroprotective IgG titres for tetanus toxoid at $\geq0.1$ IU/mL \cite{whotetanus}, Hib-PRP at $\geq$1.0 $\mu$g/mL \cite{kayhty1983protective}
-	and for all 13-valent pneumococcal vaccine serotypes at $\geq 0.35$ $\mu$g/mL \cite{siber2007estimating,whopneumo}.
 \end{enumerate}
 
+\subsubsection*{Stage 1 and 2 vaccine response}
+
+\begin{enumerate}[resume]
+	\item Compare vaccine antibody responses.
+	Vaccine antigen-specific IgG titres will be measured at ages 6, 7, 18 (pre-booster), and 19 (post-booster) months using a multiplex fleuoresenct bead assay \cite{van2008development}, for the following during stage 1 (and limited participants in stage 2 at 18 and 19 months of age for pertussis toxin only).
+	\begin{enumerate}
+		\item Pertussis toxin (PT) (stage 1 and 2)
+		\item Filamentous haemagglutinin (FHA)
+		\item Pertactin (PRN)
+		\item Tetanus toxoid (TT)
+		\item Polyribosylribitol phosphate (HiB-PRP)
+		\item 13-valent pneumococcal vaccine serotypes
+	\end{enumerate}
+	The putative protective and seroprotective thresholds are as follows:
+	\begin{itemize}
+		\item $\geq 5$ IU/mL for PT, FHA, and PRN
+		\item $\geq 0.1$ IU/mL  for TT \cite{whotetanus}
+		\item $\geq 1$ $\mu$g/mL for HiB-PRP \cite{kayhty1983protective}
+		\item $\geq 0.35$ $\mu$g/mL for pneumococcal serotypes \cite{siber2007estimating,whopneumo}
+	\end{itemize}
+	A 4-fold or greater increase from pre-booster (18 months) to post-booster (19 months) is considered evidence of Th-memory induced boosting (REFERENCE?).
+\end{enumerate}
+
+Additional details of outcome definitions and assays are available in the protocol.
 
 \section*{Randomisation}
 
@@ -456,10 +467,10 @@ Reasons for early withdrawal will be listed for all participants that prematurel
 The number of participants that were screened but not randomised will be presented and the reasons for their non-participation will be listed (where available).
 Numbers of participants who were randomised, fulfilled eligibility criteria, and number randomised by study centre, will be summarised.
 
-The trial participants and comparability of treatment groups will be summarised according to baseline variables.
+The trial participants will be summarised according to baseline variables.
 The data for each baseline variable will be presented descriptively.
-Quantitative variables will be summarised by mean, standard deviation, median, minimum and maximum.
-Qualitative variables will be summarised by counts, proportions, and rates.
+Quantitative variables will be summarised by median and inter-quartile range (IQR).
+Qualitative variables will be summarised by counts and proportions.
 
 Summaries of the following baseline data will be included:
 
@@ -482,20 +493,21 @@ Summaries of the following baseline data will be included:
 
 The planned analysis populations are defined as in Table \ref{tab:analysis-sets}.
 
+\renewcommand{\arraystretch}{2}
 \begin{table}[!ht]
 	\caption{Pre-defined analysis sets to be used in summaries and analyses.}
 	\label{tab:analysis-sets}
 	\begin{tabular}{lp{8cm}}
 		Population & Description \\ \hline
-		All randomised & All participants who were enrolled and randomised to a treatment group. \\
 		Intention-to-treat (ITT) & All randomised participants with their treatment group as randomised. Participants who received vaccines/medications violating the exclusion criteria but were enrolled will be included. \\
 		Per-protocol (PP) & All randomised participants who received as planned the vaccine policy to which they were randomised, and who completed the whole study period according to the protocol (satisfied inclusion and exclusion criteria, and visits as scheduled).
 		\\
 		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at the Perth Children's Hospital (PCH)/Telethon Kids Institute site and satisfied all stage 1 elimination criteria and did not receive any contraindicated vaccines or medications for stage 1.\\
-		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the addition of the first 150 participants enrolled under stage 2 protocol at PCH/TKI (consented for the blood samples) and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
+		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the addition of the additional participants enrolled under stage 2 protocol at PCH/TKI who consented for the blood samples and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
 		\hline
 	\end{tabular}
 \end{table}
+\renewcommand{\arraystretch}{1.25}
 
 \subsection*{Analysis of Primary Outcome}
 
@@ -535,7 +547,8 @@ In this model the effect, $\delta$ relates to the relative log-odds of the prima
 The prognostic baseline covariates to be included are:
 \begin{itemize}
 	\item gender
-	\item ANY OTHER PROGNOSTIC BASELINE FACTORS WHICH WOULD BE WORTH ADJUSTING FOR
+	\item study site
+	\item ANY OTHER PROGNOSTIC FACTORS WORTH ADJUSTING FOR?
 \end{itemize}
 
 We will specify weakly informative Student t priors for regression coefficients with 4 degrees of freedom, 0 mean, and standard deviation of 1.75.
@@ -551,29 +564,63 @@ Unadjusted 95\% CI for the difference in proportions between the study vaccine a
 Any adjusted analyses will use logistic regression models where the mean and 95\% confidence intervals on the odds ratio associated with receiving the study vaccine will be reported along with any other model parameters.
 These models will adjust for the same covariates as in the adjusted model for the primary outcome.
 
-\subsubsection*{Laboratory - Stage 1 and 2}
+Based on the intention-to-treat (ITT) and per-protocol (PP) analysis sets, the proportion of participants with each clinical and mechanistic outcome response will be reported.
+Unadjusted posterior summaries for the difference in proportions between the study vaccine and comparator will be calculated using Beta-Binomial models as for the primary outcome.
+Adjusted analyses will use logistic regression models where posterior summaries of the adjusted odds ratio associated with receiving the study vaccine will be reported along with any other model parameters.
+These models will adjust for the same covariates as in the adjusted model for the primary outcome and use the same priors.
+
+\subsubsection*{Laboratory - stage 1 atopic immunophenotypic response}
 
 The sensitivity of the assay for total IgE concentrations is between 2 kU/L and 5,000 kU/L.
 Antigen specific IgE will be reported in concentrations with ranges from 0.00 to 100.00 kU/L.
 Results outside these limits will be reported as above or below the detection limit.
 
-For the IgG concentrations (DETAILS AS ABOVE: WHAT ARE THE LIMITS OF DETECTION AND UNITS FOR THE ASSAY?)
+For analyses of concentrations, concentration measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
 
-When necessary for analyses, concentrations will be $\text{log}_{10}$ transformed.
-Concentrations outside the detection limits will be treated as censored in analyses.
-
-For each outcome (concentrations and titres), we will report by treatment group and visit for the stage 1 and stage 1+2 assay analysis sets:
+For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 assay analysis sets:
 \begin{itemize}
-	\item the median and range
-	\item the proportion outside detection limits
-	\item the proportion exceeding the specified thresholds
-	\item the proportion missing
-	\item Kaplan-Meier plots
+	\item the median and range of concentrations
+	\item the proportion of missing concentrations
+	\item the proportion of concentrations outside detection limits
+	\item the proportion of concentrations exceeding the positive response threshold
+	\item Kaplan-Meier plots of concentrations
 \end{itemize}
 
-For inferences, the mean log-concentrations and log-titres (and 95\% CrI) will be estimated and compared using censored linear mixed models assuming that concentrations are log-normally distributed with a fixed treatment effect, fixed effects for visit, interactions between visit and treatment, and participant specific effects (random intercepts).
-Sensitivity analyses will investigate additional model complexity allowing for serial correlation and heterogeneity of variances by visit schedule by specifying an unstructured covariance.
-If issues arise with this covariance structure, a simpler covariance model will be assumed, such as heterogenous compound symmetry.
+Inferences for geometric mean concentrations (GMC) will assume censored multivariate normal models for log-concentrations by visit with unstructured covariance matrices and visit by treatment specific means.
+If issues arise with the covariance structure, a simpler covariance model will be assumed, such as heterogenous compound symmetry.
+Weakly informative normal(0, 1) priors will be specified for means and LKJ prior on the Cholesky factor of the correlation matrix and Cauchy(0, 2.5) on the standard deviations.
+
+Inferences for relative proportions exceeding positive response threshold by study group will assume logistic regression models with a fixed term for treatment group.
+
+\subsubsection*{Laboratory - stage 1 and 2 vaccine response}
+
+IgG concentrations (ANY DETAILS ON THE ASSAY?)
+
+For analyses of concentrations, concentration measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
+
+For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 assay analysis sets:
+\begin{itemize}
+	\item the median and range of concentrations
+	\item the proportion of missing concentrations
+	\item the proportion of concentrations outside detection limits
+	\item the proportion of concentrations exceeding the positive response threshold
+	\item the proportion of participants with a 4-fold or greater increase or a change from below the limit of detection to above in their concentration from 18 to 19 months 
+	\item Kaplan-Meier plots of concentrations
+\end{itemize}
+
+Inferences for relative GMC and proportions will be as for the atopic immunophenotypic response outcomes.
+
+Non-inferiority of the mixed aP/wP immunisation regime compared to the NIP with respect to PT will be assessed relative to a non-inferiority margin of 2/3 on the GMC ratio.
+If the GMC ratio for a particular antigen and visit is defined as
+$$
+\text{GMR} = \frac{\text{GMC}_\text{wP}}{\text{GMC}_\text{aP}}
+$$ 
+then non-inferiority will be evaluated according to
+$$
+\mathbb P\left[\text{GMR}\geq \frac{2}{3}\Big\vert \text{data}\right].
+$$
+
+(ANY REFERENCE FOR NON-INFERIORITY MARGIN OF 2/3?)
 
 \subsection*{Subgroup Analyses}
 
@@ -638,14 +685,11 @@ Patterns and predictors of missingness will also be investigated and summarised.
 Descriptive and summary statistics will generally be based on complete-cases data.
 The primary analyses will be based on complete-cases.
 Secondary analyses using multiple imputation for missing responses and covariates will be undertaken to investigate sensitivity of the results.
-TIPPING POINT ANALYSIS? 
 
 \subsection*{Sensitivity Analyses}
 
-Sensitivity of results to the specified priors will be investigated by estimating parameters under different 
-prior configurations than those used in the primary analyses.
-In particular, the hyperparameter for prior variances will be varied to assess 
-how conclusions may change under varying strength of the prior.
+Sensitivity of results to the specified priors will be investigated by estimating parameters under different prior configurations than those used in the primary analyses.
+In particular, the hyperparameter for prior variances will be varied to assess how conclusions may change under varying strength of the prior.
 
 \section*{Operating Characteristics}
 
@@ -709,6 +753,7 @@ These funding bodies had no role in the design and conduct of this trial, in the
 The University of Sydney is the trial sponsor, being the institution that assumes the overall responsibility for the conduct of the trial and the administration of the NHMRC grant.
 
 \section*{Abbreviations}%% if any
+
 \textbf{aP:} acellular pertussis
 
 \textbf{CI:} confidence interval
@@ -719,9 +764,17 @@ The University of Sydney is the trial sponsor, being the institution that assume
 
 \textbf{DTwP:} diphtheria tetanus whole-cell pertussis 
 
+\textbf{FHA:} filamentous haemagglutinin
+
+\textbf{GMC:} geometric mean concentration
+
+\textbf{GMR:} geometric mean ratio
+
+\textbf{HiB:} \textit{Haemophilus influenzae} type b 
+
 \textbf{IA:} interim analysis/analyses
 
-\textbf{ICE:} intercurrent event
+\textbf{IQR}: inter-quartile range
 
 \textbf{ITT:} intention-to-treat
 
@@ -731,9 +784,17 @@ The University of Sydney is the trial sponsor, being the institution that assume
 
 \textbf{PP:} per-protocol
 
+\textbf{PRN:} pertactin
+
+\textbf{PRP:} polyribosyl-ribitol phosphate
+
+\textbf{PT:} pertussis toxin
+
 \textbf{SAP:} statistical analysis plan
 
 \textbf{SPT:} skin prick test
+
+\textbf{TT:} tetanus toxoid
 
 \textbf{wP:} whole-cell pertussis
 
