@@ -1,3 +1,3 @@
 # OPTIMUM Statistical Analysis Plan
 
-Workflow as https://saik.at/blog/github-and-overleaf-integration/
+Manage workflow as per https://saik.at/blog/github-and-overleaf-integration/
