@@ -55,6 +55,9 @@
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
 \usepackage{enumitem}
 \usepackage{marginnote}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -72,7 +75,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\includegraphic{}
-\def\includegraphics{}
+% \def\includegraphics{}
 
 %%% Put your definitions there:
 \startlocaldefs
@@ -122,9 +125,17 @@
 ]{\inits{G.P}\fnm{Gladymar P.}\snm{Chacon}}
 \author[
 	addressref={aff2},
-	corref={aff2},
 	email={...}
-]{}
+]{\inits{M.E}\fnm{Marie J.}\snm{Estcourt}}
+\author[
+	addressref={aff2},
+	email={...}
+]{\inits{J.M.}\fnm{Julie A.}\snm{Marsh}}
+\author[
+	addressref={aff1},
+	corref={aff1},
+	email={...}
+]{\inits{T.S.}\fnm{Thomas L.}\snm{Snelling}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -271,13 +282,13 @@ The SAP is written to be consistent with the CONSORT 2010 Statement and further 
 
 \section*{Study Synopsis}
 
-The OPTIMUM trial is a phase IV, prospective, multi-centre, two-armed, double-blinded, randomised, superiority, adaptive clinical trial designed to assess the effectiveness of a first scheduled dose of wP vaccine in preventing food allergy, compared to the standard aP vaccine in healthy, vaccine-eligible infants aged 6 to \textless12 weeks born at \(\geq\) 32 weeks gestation in Australia.
-
+The OPTIMUM trial is a phase IV, two-armed, prospective, multi-site double-blinded, adaptive, randomised clinical trial designed to assess the effectiveness of a first scheduled dose of wP vaccine in preventing food allergy, compared to the standard aP vaccine in healthy, vaccine-eligible infants aged 6 to \textless12 weeks born at \(\geq\) 32 weeks gestation in Australia.
 The trial uses a Bayesian group-sequential design with pre-specified stopping rules informed by predictive probabilities of trial outcomes given the data available at interim analyses.
 
 The protocol defines two stages of the trial.
-During stage 1....
-During stage 2....
+During stage 1, 150 participants were recruited from Perth children's Hospital (PCH), Western Australia between January 2018 and January 2020.
+Stage 2 will expand the trial to include sites in Sydney and Melbourne randomising up to 3,000 participants including the 150 from stage 1.
+The stage 1 and stage 2 schedules of assessment are available in the previously published protocol \cite{perez2020}.
 
 \section*{Interventions}
 
@@ -286,10 +297,6 @@ This is given via intramuscular injection into the anterolateral aspect of the r
 Other scheduled 6-week doses are co-administered per Australia's national immunisation program.
 
 \section*{Study Population}
-
-Stage 1 of the study is being conducted at sites in Perth, Western Australia.
-Recruitment started in January 2018, with the 150th participant randomised in January 2020.
-Stage 2 will also include sites in Sydney and Melbourne.
 
 \subsection*{Inclusion Criteria}
 
@@ -373,28 +380,31 @@ A participant will be considered to have the outcome if there is evidence of sen
 
 \subsection*{Secondary}
 
-\subsubsection*{Clinical and mechanistic outcomes}
+The protocol defines a number of secondary objectives and associated outcomes.
+These are numbered below.
+
+\subsubsection*{Clinical and mechanistic}
 
 \begin{enumerate}
-	\item Compare the rate of new onset atopic dermatitis in each study group. 
-	Two binary outcomes will be investigated:
+	\item Compare the rate of new onset atopic dermatitis in each study group:
+	two binary outcomes will be investigated:
 	\begin{enumerate}
 		\item A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 6 months of age and a positive SPT to any allergen by approximately 12 months of age.
 		\item A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 12 months of age and a positive SPT to any allergen by approximately 12 months of age
 	\end{enumerate}
-	\item Compare the rate of SPT positivity to common allergens in each study group.
-	Two binary outcomes will be investigated:
+	\item Compare the rate of SPT positivity to common allergens in each study group:
+	two binary outcomes will be investigated:
 	\begin{enumerate}
 		\item A SPT wheals $>$1mm greater than the negative control to at least one allergen by approximately 12 months of age.
 		\item A SPT wheals $\geq$3mm greater than the negative control to at least one allergen by approximately 12 months of age.
 	\end{enumerate}
 \end{enumerate}
 
-\subsubsection*{Stage 1 atopic immunophenotypic response}
+\subsubsection*{Stage 1 atopic immunophenotypic response and vaccine response}
 
 \begin{enumerate}[resume]
-	\item Compare the Th2 immunophenotypic response to tetanus toxoid and egg antigens in infants in each study group.
-	IgE concentrations to the following antigens will be collected at ages 6, 7 and 19 months using ImmunoCAP total and specific IgE assays (Thermo Fisher Scientific/Phadia, Uppsala, Sweden) during stage 1 only (150 participants):
+	\item Compare the Th2 immunophenotypic response to tetanus toxoid and egg antigens in infants in each study group:
+	IgE concentrations to the following antigens will be collected at ages 6 (prior to third pertussis-containing vaccine dose) and 7 months (21-35 days after vaccination) using ImmunoCAP total and specific IgE assays (Thermo Fisher Scientific/Phadia, Uppsala, Sweden) during stage 1 only (150 participants):
 	\begin{enumerate}
 		\item Total IgE concentration
 		\item IgE concentration to tetanus toxoid (TT) vaccine antigen
@@ -405,27 +415,37 @@ A participant will be considered to have the outcome if there is evidence of sen
 	IgE levels $\geq$ 0.35 KU/L are considered positive.
 \end{enumerate}
 
-\subsubsection*{Stage 1 and 2 vaccine response}
-
 \begin{enumerate}[resume]
-	\item Compare vaccine antibody responses.
-	Vaccine antigen-specific IgG titres will be measured at ages 6, 7, 18 (pre-booster), and 19 (post-booster) months using a multiplex fleuoresenct bead assay \cite{van2008development}, for the following during stage 1 (and limited participants in stage 2 at 18 and 19 months of age for pertussis toxin only).
+	\item Compare vaccine antibody responses:
+	vaccine antigen-specific IgG concentrations/titres will be measured at ages 6, 7, 18, and 19 months using a multiplex fleuoresenct bead assay \cite{van2008development}, for the following during stage 1 only (150 participants).
 	\begin{enumerate}
-		\item Pertussis toxin (PT) (stage 1 and 2)
+		\item Pertussis toxin (PT)
 		\item Filamentous haemagglutinin (FHA)
 		\item Pertactin (PRN)
 		\item Tetanus toxoid (TT)
 		\item Polyribosylribitol phosphate (HiB-PRP)
 		\item 13-valent pneumococcal vaccine serotypes
+		\item Hepatitis B surface antigen (HBsAg)
+		\item Diptheria toxin (DT)
 	\end{enumerate}
-	The putative protective and seroprotective thresholds are as follows:
+	The seroprotective/seropositivity thresholds are as follows:
 	\begin{itemize}
 		\item $\geq 5$ IU/mL for PT, FHA, and PRN
-		\item $\geq 0.1$ IU/mL  for TT \cite{whotetanus}
+		\item $\geq 0.1$ IU/mL  for TT \cite{whotetanus} and DT
+		\item $\geq 0.1$ mIU/mL for HBsAg
 		\item $\geq 1$ $\mu$g/mL for HiB-PRP \cite{kayhty1983protective}
 		\item $\geq 0.35$ $\mu$g/mL for pneumococcal serotypes \cite{siber2007estimating,whopneumo}
 	\end{itemize}
-	A 4-fold or greater increase from pre-booster (18 months) to post-booster (19 months) is considered evidence of Th-memory induced boosting (REFERENCE?).
+	For each antigen, we will assess the fold-rise in concentration from 18 to 19 months in addition to the concentrations and seroproection/seropositivity.
+	A 4-fold rise or greater will be considered indicative of seroconversion.
+\end{enumerate}
+
+\subsubsection*{Stage 2 vaccine response}
+
+\begin{enumerate}[resume]
+	\item Compare vaccine antibody responses:
+	PT-specific IgG concentrations will continue to be measured at ages 18 and 19 months in stage 2 up to a maximum of 300 participants 
+	unless non-inferiority of wP/aP compared to aP is established earlier.
 \end{enumerate}
 
 Additional details of outcome definitions and assays are available in the protocol.
@@ -503,7 +523,7 @@ The planned analysis populations are defined as in Table \ref{tab:analysis-sets}
 		Per-protocol (PP) & All randomised participants who received as planned the vaccine policy to which they were randomised, and who completed the whole study period according to the protocol (satisfied inclusion and exclusion criteria, and visits as scheduled).
 		\\
 		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at the Perth Children's Hospital (PCH)/Telethon Kids Institute site and satisfied all stage 1 elimination criteria and did not receive any contraindicated vaccines or medications for stage 1.\\
-		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the addition of the additional participants enrolled under stage 2 protocol at PCH/TKI who consented for the blood samples and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
+		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the inclusion of the additional participants enrolled under stage 2 protocol at PCH/TKI who consented for the blood samples and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -533,7 +553,7 @@ $$
 For this study, the threshold for assessing superiority was $q=0.95$.
 This value was chosen based on simulation studies investigating the effect of the interim analysis stopping rules on the probability of false positives, false negatives, and expected sample size.
 
-Although superiority is recommended by the formal test of the above hypotheses, effect sizes will be presented as a summary (mean, median, and 95\% credible interval) of the posterior density obtained at the final analysis in addition to the posterior probability of superiority.
+Although superiority is recommended by the formal test of the above hypotheses, effect sizes will be presented as summaries (mean, median, and 95\% credible interval (CrI)) of the posterior density obtained at the final analysis in addition to the posterior probability of superiority.
 
 The primary analysis of the outcome will use independent Beta-Binomial models for the response proportion in the two study arms.
 In this case, $\delta=\theta_w-\theta_a$, the difference in probability of IgE-mediated food allergy between the two vaccine schedules.
@@ -543,7 +563,6 @@ $\text{Beta}(1,1)$ priors will be assumed for both response probabilities.
 \subsection*{Adjusted Analysis}
 
 A secondary supportive analysis of the primary outcome will use logistic regression to estimate a covariate adjusted odds ratio associated with the study vaccine.
-In this model the effect, $\delta$ relates to the relative log-odds of the primary outcome associated with the study vaccine, conditional on the included covariates.
 The prognostic baseline covariates to be included are:
 \begin{itemize}
 	\item gender
@@ -552,17 +571,11 @@ The prognostic baseline covariates to be included are:
 \end{itemize}
 
 We will specify weakly informative Student t priors for regression coefficients with 4 degrees of freedom, 0 mean, and standard deviation of 1.75.
-
 Inference will be based on Markov chain Monte Carlo (MCMC) samples.
 
 \subsection*{Analysis of Secondary Outcomes}
 
 \subsubsection*{Clinical and Mechanistic}
-
-Based on the intention-to-treat (ITT) and per-protocol (PP) analysis sets, the proportion of participants with each clinical and mechanistic outcome response will be reported.
-Unadjusted 95\% CI for the difference in proportions between the study vaccine and comparator will be calculated using the Newcombe Hybrid Score (NHS) interval \cite{newcombe1998interval}.
-Any adjusted analyses will use logistic regression models where the mean and 95\% confidence intervals on the odds ratio associated with receiving the study vaccine will be reported along with any other model parameters.
-These models will adjust for the same covariates as in the adjusted model for the primary outcome.
 
 Based on the intention-to-treat (ITT) and per-protocol (PP) analysis sets, the proportion of participants with each clinical and mechanistic outcome response will be reported.
 Unadjusted posterior summaries for the difference in proportions between the study vaccine and comparator will be calculated using Beta-Binomial models as for the primary outcome.
@@ -571,47 +584,47 @@ These models will adjust for the same covariates as in the adjusted model for th
 
 \subsubsection*{Laboratory - stage 1 atopic immunophenotypic response}
 
-The sensitivity of the assay for total IgE concentrations is between 2 kU/L and 5,000 kU/L.
-Antigen specific IgE will be reported in concentrations with ranges from 0.00 to 100.00 kU/L.
-Results outside these limits will be reported as above or below the detection limit.
+The sensitivity of the assay for total IgE and antigen-specific IgE concentrations will be reported.
+Results outside the limits of detection will be reported as above or below the detection limit.
 
-For analyses of concentrations, concentration measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
+For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
 
-For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 assay analysis sets:
+For each outcome, we will report by treatment group and visit for the stage 1 assay analysis sets:
 \begin{itemize}
 	\item the median and range of concentrations
 	\item the proportion of missing concentrations
-	\item the proportion of concentrations outside detection limits
+	\item the proportion of concentrations above/below detection limits
 	\item the proportion of concentrations exceeding the positive response threshold
 	\item Kaplan-Meier plots of concentrations
 \end{itemize}
 
 Inferences for geometric mean concentrations (GMC) will assume censored multivariate normal models for log-concentrations by visit with unstructured covariance matrices and visit by treatment specific means.
 If issues arise with the covariance structure, a simpler covariance model will be assumed, such as heterogenous compound symmetry.
-Weakly informative normal(0, 1) priors will be specified for means and LKJ prior on the Cholesky factor of the correlation matrix and Cauchy(0, 2.5) on the standard deviations.
+Weakly informative priors (Normal(0, 1), will be specified for parameters in the linear predictor and LKJ prior on the correlation matrix and Cauchy(0, 2.5) on the standard deviations.
 
 Inferences for relative proportions exceeding positive response threshold by study group will assume logistic regression models with a fixed term for treatment group.
 
 \subsubsection*{Laboratory - stage 1 and 2 vaccine response}
 
-IgG concentrations (ANY DETAILS ON THE ASSAY?)
+The sensitivity of the assay for total IgE and antigen-specific IgE concentrations will be reported.
+Results outside the limits of detection will be reported as above or below the detection limit.
 
-For analyses of concentrations, concentration measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
+For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
 
-For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 assay analysis sets:
+For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 (PT only) assay analysis sets:
 \begin{itemize}
 	\item the median and range of concentrations
 	\item the proportion of missing concentrations
-	\item the proportion of concentrations outside detection limits
-	\item the proportion of concentrations exceeding the positive response threshold
-	\item the proportion of participants with a 4-fold or greater increase or a change from below the limit of detection to above in their concentration from 18 to 19 months 
+	\item the proportion of concentrations above/below detection limits
+	\item the proportion of concentrations exceeding the seroprotective/seropositivity thresholds
+	\item the proportion of participants with a 4-fold or greater increase in their concentration from 18 to 19 months 
 	\item Kaplan-Meier plots of concentrations
 \end{itemize}
 
-Inferences for relative GMC and proportions will be as for the atopic immunophenotypic response outcomes.
+Inferences for relative GMC and proportions will use the same modelling approach as for the atopic immunophenotypic response outcomes.
 
-Non-inferiority of the mixed aP/wP immunisation regime compared to the NIP with respect to PT will be assessed relative to a non-inferiority margin of 2/3 on the GMC ratio.
-If the GMC ratio for a particular antigen and visit is defined as
+Non-inferiority of the mixed aP/wP immunisation regime compared to the NIP with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMC ratio.
+That is, if the GMC ratio for a particular antigen and visit is defined as
 $$
 \text{GMR} = \frac{\text{GMC}_\text{wP}}{\text{GMC}_\text{aP}}
 $$ 
@@ -619,8 +632,6 @@ then non-inferiority will be evaluated according to
 $$
 \mathbb P\left[\text{GMR}\geq \frac{2}{3}\Big\vert \text{data}\right].
 $$
-
-(ANY REFERENCE FOR NON-INFERIORITY MARGIN OF 2/3?)
 
 \subsection*{Subgroup Analyses}
 
@@ -712,8 +723,8 @@ Data were generated as Bernoulli random variables using the specified probabilit
 
 A grid of decision threshold values was investigated across all scenarios.
 For the final analysis, posterior probability thresholds of $q\in\{0.95,0.955,0.96,0.965,0.97\}$ were investigated.
-Futility thresholds were fixed across all interim analyses and set to $\underline{c}_k\in\{0,0.025,0.05,0.075,0.1,0.2\}$.
-Expected success thresholds were fixed across all interim analyses and set to $\overline{c}_k\in\{0.8,0.9,0.925,0.95,0.975,1\}$.
+Futility thresholds were fixed across all interim analyses and set to $\underline{c}\in\{0,0.025,0.05,0.075,0.1,0.2\}$.
+Expected success thresholds were fixed across all interim analyses and set to $\overline{c}\in\{0.8,0.9,0.925,0.95,0.975,1\}$.
 
 The scenarios explored are summarised in Table \ref{tab:scenarios}.
 
@@ -735,6 +746,52 @@ The scenarios explored are summarised in Table \ref{tab:scenarios}.
 	\end{tabular}
 \end{table}
 
+\subsection*{Results}
+
+Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present power for superiority and expected sample size respectively over the grid of effect sizes and decision thresholds.
+
+\begin{figure}[!ht]
+	\caption{Probability of deciding superiority at the final analysis by decision thresholds and effect size assuming constant 16 per week accrual.}
+	\includegraphics{figures/superiority_16.pdf}
+	\label{fig:superiority_16}
+\end{figure}
+
+\begin{figure}[!ht]
+	\caption{Expected sample size by decision thresholds and effect size assuming constant 16 per week accrual.}
+	\includegraphics{figures/expected_ss_16.pdf}
+	\label{fig:expected_ss_16}
+\end{figure}
+
+Table \ref{tab:oc1} summarises the operating characteristics assuming thresholds $q=0.95$, $\underline{c}=0.05$, and $\overline{c}=0.95$.
+Assuming constant accrual of 16 participants per week, false positives occurred with approximate probability 0.05.
+The estimated probability of a true positive was 0.85 when the effect was a reduction from 0.1 to 0.07 in the primary outcome probabilities.
+
+\begin{table}
+	\caption{\label{tab:oc1}Trial operating characteristics assuming constant accrual of 16 per week, where $q=0.95$, $\underline{c}=0.05$, and $\overline{c}=0.95$.}
+	\centering
+	\begin{tabular}[t]{lrrrrrrrrr}
+	\toprule
+	$\theta_a^\star$ & $\theta_w^\star$ & \makecell{Decide\\superior} & \makecell{Stop\\early\\superior} & \makecell{No\\stop\\superior} & \makecell{Stop\\futile} & \makecell{Stop\\expect\\success} & \makecell{Superior\\following\\futile} & \makecell{Superior\\following\\exepct\\success} & \makecell{Expected\\sample\\size}\\
+	\midrule
+	0.10 & 0.05 & 0.99 & 0.97 & 0.02 & 0.01 & 0.97 & 0.61 & 1.00 & 1673\\
+	 & 0.06 & 0.97 & 0.84 & 0.12 & 0.03 & 0.84 & 0.34 & 0.99 & 1959\\
+	 & 0.07 & 0.85 & 0.57 & 0.27 & 0.08 & 0.59 & 0.14 & 0.95 & 2251\\
+	 & 0.08 & 0.55 & 0.28 & 0.28 & 0.21 & 0.31 & 0.05 & 0.86 & 2412\\
+	 & 0.09 & 0.22 & 0.09 & 0.12 & 0.44 & 0.13 & 0.01 & 0.68 & 2353\\
+	 & 0.10 & 0.05 & 0.02 & 0.03 & 0.69 & 0.04 & 0.00 & 0.47 & 2129\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\section*{Discussion}
+
+The motivations, context and procedures for implementing the OPTIMUM trial have been described in the protocol. 
+In this document, we have provided a detailed specification of the statistical analysis plan relating to the interim and final analyses. 
+We presented the results of Monte Carlo simulations used to explore trial operating characteristics of the trial which were used in trial planning.
+
+Publication of the study protocol and the present statistical analysis plan before knowledge of any results was done to enhance transparency.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -802,7 +859,7 @@ The University of Sydney is the trial sponsor, being the institution that assume
 The investigators will undertake to make patient-level data available for independent analysis subject to any requisite approval from the relevant ethics and governance committees.
 
 \section*{Ethics approval and consent to participate}%% if any
-Ethics approval has been granted by...
+Ethics approval has been granted by the Child and Adolescent Health Service Human Research Ethics Committee, Perth, Western Australia (RGS 00019)
 
 \section*{Competing interests}
 The authors declare that they have no competing interests.
@@ -810,8 +867,8 @@ The authors declare that they have no competing interests.
 \section*{Authors' contributions}
 JAT was responsible for the design and draft of the SAP.
 
-\section*{Authors' information}%% if any
-Text for this section\ldots
+% \section*{Authors' information}%% if any
+% Text for this section\ldots
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
@@ -856,50 +913,8 @@ Text for this section\ldots
 %%
 %% Do not use \listoffigures as most will included as separate files
 
-\section*{Figures}
+% \section*{Figures}
 
-\begin{figure}[!ht] 	  	  	  
-	\caption{Example accrual assuming 16 enrolees per week on average.}
-	\label{fig:accrual-16}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under constant 16 per week accrual.}
-	\label{fig:decisions-16}
-\end{figure}
-
-\begin{figure}[!ht]
-\caption{Probability of the trial stopping at each stage for either expected success or futility, under constant 16 per week accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-16}
-\end{figure}
-
-
-\begin{figure}[!ht] 	  	  	  
-	\caption{Example accrual assuming 5 enrolees per week on average.}
-	\label{fig:accrual-5}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under constant 5 per week accrual.}
-	\label{fig:decisions-5}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of the trial stopping at each stage for either expected success or futility, under constant 5 per week accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-5}
-\end{figure}
-
-\begin{figure}[!ht] 	  	  	  
-	\caption{Example ramp-up accrual.}
-	\label{fig:accrual-ru}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under ramp-up accrual.}
-	\label{fig:decisions-ru}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of the trial stopping at each stage for either expected success or futility, under ramp-up accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-ru}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -909,13 +924,7 @@ Text for this section\ldots
 
 %% Use of \listoftables is discouraged.
 %%
-\section*{Tables}
-
-
-
-
-
-
+% \section*{Tables}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -924,14 +933,12 @@ Text for this section\ldots
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Additional Files}
-  \subsection*{Additional file 1 --- Sample additional file title}
-    Additional file descriptions text (including details of how to
-    view the file, if it is in a non-standard format or the file extension).  This might
-    refer to a multi-page table or a figure.
+% \section*{Additional Files}
+%   \subsection*{Additional file 1 --- Sample additional file title}
+%     Additional file descriptions text (including details of how to
+%     view the file, if it is in a non-standard format or the file extension).  This might
+%     refer to a multi-page table or a figure.
 
-  \subsection*{Additional file 2 --- Sample additional file title}
-    Additional file descriptions text.
 
 \end{backmatter}
 \end{document}
