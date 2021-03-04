@@ -643,7 +643,7 @@ Any such subgroup analyses will be noted as being post-hoc.
 This trial includes interim analyses to be undertaken at pre-specified sample sizes to recommend whether the trial should be stopped early for futility or expected success.
 
 The recommendations are made in accordance with pre-specified stopping rules based on the data available at the time of the interim.
-The decisions on whether to stop are informed by Bayesian predictive probabilities of treatment effect.
+The decisions on whether to stop are informed by Bayesian predictive probabilities of treatment effect \cite{spiegelhalter2004bayesian}.
 
 Interim analyses begin after 200 subjects have complete primary outcome data.
 Subsequent interim analyses will occur every additional 200 subjects with complete primary outcome data until either a stopping rule is met, or enrolment is close to completion.
@@ -654,7 +654,7 @@ Let $\mathbb P(\delta < 0|D_k)$ denote the posterior probability of superiority 
 We specify a prediction model, $f(\tilde D_k|D_k)$ for future outcome data $\tilde D_k$ that uses the data observed so far, marginalised over any uncertainty in the prediction model parameters.
 Using predictions of the primary outcome for subjects enrolled who are yet to complete follow-up, and subjects yet to be enrolled, the stopping decision is based on the predicted outcome of the trial (in terms of the decision rule used at the final analysis) if it were stopped now (with follow-up completed on enrolled participants), or continued to the maximum sample size, given what has been observed up to interim $k$.
 
-The predicted probability of success (PPoS) is calculated as
+The predicted probability of success (PPoS) \cite{berry2010bayesian} is calculated as
 $$
 \text{PPoS}_k(q) = \mathbb E_{\tilde D_k | D_k}\left[\textbf{1}_{(q,1]}\left\{\mathbb P(\delta<0|D_k,\tilde D_k)\right\}\right]
 $$
@@ -685,9 +685,9 @@ d(D_k)=\begin{cases}
 \text{stop for expected success} & \text{if } \text{PPoS}_k^0(q) > \overline{c}_k \\
 \text{stop for futility} & \text{if } \text{PPoS}_k^1(q) < \underline{c}_k \\
 \text{continue to analysis }k+1 &\text{otherwise}
-\end{cases}
+\end{cases} \quad k=1,...,K
 $$
-where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ as selected by simulation.
+where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ for all $k$ as selected by simulation.
 
 \subsection*{Missing Data}
 
@@ -704,21 +704,23 @@ In particular, the hyperparameter for prior variances will be varied to assess h
 
 \section*{Operating Characteristics}
 
-The operating characteristics of the OPTIMUM trial were estimated using Monte Carlo methods specifying various scenarios for the data generating process. The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
+The operating characteristics of the OPTIMUM trial were estimated using Monte Carlo methods assuming 
+various scenarios for the data generating process. 
+The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
 
 \subsection*{Scenarios}
 
 A first interim analysis is scheduled to occur when primary endpoint data is available on 200 subjects.
-Subsequent interim analyses occur every additional 200 subjects with available endpoint data until fewer than 100 subjects remain to be enrolled, or enrolment is complete.
+Subsequent interim analyses occur every additional 200 subjects with available endpoint data until a stopping rule is met, or enrolment is already complete at the maximum sample size of 3,000.
 
 Trial data was generated allowing variations in: accrual rate and pattern of accrual, time to primary endpoint, true response probability in the control and treatment arms, and decision thresholds.
 
 Accrual was assumed to follow a non-homogeneous Poisson process and we investigated varying the baseline rate and varying the shape of accrual by allowing for slow initial accrual and a ramp-up in the latter stages of the trial.
-We assumed baseline accrual of 16 per week, and 5 per week (slow accrual is worst case for false positives), and ramp-up accrual.
+We assumed baseline accrual of 16 per week, and 5 per week (slow accrual is worst case for false positives), and a gradually increasing rate of accrual.
 
 Time to primary outcome was assumed to be uniform between 48 and 72 weeks (mean 60 weeks) post-randomisation.
 
-The probability of food-allergy within the comparator vaccine, $\theta_a^\star$, and study vaccine, $\theta_w^\star$, populations investigated were $\theta_a^\star=0.1$ and $\theta_w^\star\in\{0.05, 0.06, 0.07, 0.08, 0.09,0.1\}$.
+The probability of food-allergy within the standard aP schedule, $\theta_a^\star$, and study vaccine schedule wP/aP, $\theta_w^\star$, populations investigated were $\theta_a^\star=0.1$ and $\theta_w^\star\in\{0.05, 0.06, 0.07, 0.08, 0.09,0.1\}$.
 Data were generated as Bernoulli random variables using the specified probability with time of enrolment generated from the accrual specification, and time to response generated from the time to outcome specification.
 
 A grid of decision threshold values was investigated across all scenarios.
@@ -748,7 +750,11 @@ The scenarios explored are summarised in Table \ref{tab:scenarios}.
 
 \subsection*{Results}
 
-Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present power for superiority and expected sample size respectively over the grid of effect sizes and decision thresholds.
+Simulation results from all scenario combinations were based on 10,000 replications performed using R \cite{Rlang}.
+Results are presented here only for the 16 per week accrual scenario; the other scenarios are availalbe in a supplemental file.
+
+Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present power for superiority and expected sample size respectively over the grid of effect sizes and decision thresholds assuming constant accrual of 16 participants per week.
+Figures \ref{fig:stop_expect_success_16} and \ref{fig:stop_futility_16} present marginal stopping probabilities for expected success and futility respectively.
 
 \begin{figure}[!ht]
 	\caption{Probability of deciding superiority at the final analysis by decision thresholds and effect size assuming constant 16 per week accrual.}
@@ -762,8 +768,20 @@ Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present power for 
 	\label{fig:expected_ss_16}
 \end{figure}
 
-Table \ref{tab:oc1} summarises the operating characteristics assuming thresholds $q=0.95$, $\underline{c}=0.05$, and $\overline{c}=0.95$.
-Assuming constant accrual of 16 participants per week, false positives occurred with approximate probability 0.05.
+\begin{figure}[!ht]
+	\caption{Marginal stopping probability for expected success by stage, effect size, and thresholds assuming constant 16 per week accrual and futility bound $\underline{c}=0.05$.}
+	\includegraphics{figures/stop_expect_success_16.pdf}
+	\label{fig:stop_expect_success_16}
+\end{figure}
+
+\begin{figure}[!ht]
+	\caption{Marginal stopping probability for futility by stage, effect size, and thresholds assuming constant 16 per week accrual and expected success bound $\overline{c}=0.95$.}
+	\includegraphics{figures/stop_futility_16.pdf}
+	\label{fig:stop_futility_16}
+\end{figure}
+
+Table \ref{tab:oc1} summarises the operating characteristics assuming thresholds $q=0.95$, $\underline{c}=0.05$, and $\overline{c}=0.95$ which were the thresholds chosen for the trial.
+False positives occurred with approximate probability of 0.05.
 The estimated probability of a true positive was 0.85 when the effect was a reduction from 0.1 to 0.07 in the primary outcome probabilities.
 
 \begin{table}
@@ -801,15 +819,17 @@ Publication of the study protocol and the present statistical analysis plan befo
 
 \begin{backmatter}
 
-\section*{Acknowledgements}%% if any
-We acknowledge the...
+\section*{Acknowledgements}
 
-\section*{Funding}%% if any
+We acknowledge ...
+
+\section*{Funding}
+
 This is an investigator-initiated study supported by grants from the National Health and Medical Research Council of Australia (NHMRC) (GNT 1158722) and Telethon New Children's Hospital Research Fund 2012 (Round 1).
 These funding bodies had no role in the design and conduct of this trial, in the analyses of the data or in the decision to submit the results for publication.
 The University of Sydney is the trial sponsor, being the institution that assumes the overall responsibility for the conduct of the trial and the administration of the NHMRC grant.
 
-\section*{Abbreviations}%% if any
+\section*{Abbreviations}
 
 \textbf{aP:} acellular pertussis
 
@@ -856,15 +876,19 @@ The University of Sydney is the trial sponsor, being the institution that assume
 \textbf{wP:} whole-cell pertussis
 
 \section*{Availability of data and materials}%% if any
+
 The investigators will undertake to make patient-level data available for independent analysis subject to any requisite approval from the relevant ethics and governance committees.
 
 \section*{Ethics approval and consent to participate}%% if any
+
 Ethics approval has been granted by the Child and Adolescent Health Service Human Research Ethics Committee, Perth, Western Australia (RGS 00019)
 
 \section*{Competing interests}
+
 The authors declare that they have no competing interests.
 
 \section*{Authors' contributions}
+
 JAT was responsible for the design and draft of the SAP.
 
 % \section*{Authors' information}%% if any
@@ -933,12 +957,11 @@ JAT was responsible for the design and draft of the SAP.
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \section*{Additional Files}
-%   \subsection*{Additional file 1 --- Sample additional file title}
-%     Additional file descriptions text (including details of how to
-%     view the file, if it is in a non-standard format or the file extension).  This might
-%     refer to a multi-page table or a figure.
+\section*{Additional Files}
 
+\subsection*{Additional file 1 --- Operating characteristcs for other accrual scenarios}
+
+This file includes simulation results for the remaining scenarios described in the main text.
 
 \end{backmatter}
 \end{document}
