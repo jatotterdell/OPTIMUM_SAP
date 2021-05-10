@@ -47,14 +47,17 @@
 
 %%% Load packages
 \usepackage{amsthm,amsmath,amsfonts}
-%\RequirePackage[numbers]{natbib}
+\RequirePackage[numbers]{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
 %\RequirePackage{hyperref}
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-
+\usepackage{enumitem}
 \usepackage{marginnote}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -72,7 +75,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\includegraphic{}
-\def\includegraphics{}
+% \def\includegraphics{}
 
 %%% Put your definitions there:
 \startlocaldefs
@@ -114,11 +117,34 @@
   corref={aff1},                       % id of corresponding address, if any
 % noteref={n1},                        % id's of article notes, if any
   email={james.totterdell@sydney.edu.au}   % email address
-]{\inits{J.T.}\fnm{James A.} \snm{Totterdell}}
+]{\inits{J.T.}\fnm{James A. }\snm{Totterdell}}
 \author[
   addressref={aff2},
-  email={...}
-]{...}
+  corref={aff2},
+  email={...@telethonkids.org.au}
+]{\inits{G.P}\fnm{Gladymar }\snm{Perez Chacon}}
+\author[
+	addressref={aff2},
+	email={...@sydney.edu.au}
+]{\inits{M.E}\fnm{Marie J. }\snm{Estcourt}}
+\author[
+	addressref={aff2},
+	email={...@sydney.edu.au}
+]{\inits{M.J}\fnm{Mark }\snm{Jones}}
+\author[
+	addressref={aff2},
+	corref={aff2},
+	email={...@telethonkids.org.au}
+]{\inits{P.R.}\fnm{Peter }\snm{Richmond}}
+\author[
+	addressref={aff1},
+	corref={aff1},
+	email={...@sydney.edu.au}
+]{\inits{T.S.}\fnm{Thomas L. }\snm{Snelling}}
+\author[
+	addressref={aff2},
+	email={...@telethonkids.org.au}
+]{\inits{J.M.}\fnm{Julie A. }\snm{Marsh}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -138,8 +164,6 @@
 \address[id=aff2]{%
   \orgdiv{Wesfarmers Centre of Vaccines and Infectious Diseases},
   \orgname{Telethon Kids Institute},
-  %\street{},
-  %\postcode{}
   \city{Perth},
   \cny{Australia}
 }
@@ -175,16 +199,16 @@
 
 \begin{abstract} % abstract
 \parttitle{Objective} %if any
-The purpose of this double-blind, randomised, controlled trial is to compare allergic outcomes in children following vaccination with acellular pertussis (aP) antigen given at 2 months of age versus whole cell pertussis (wP) in the infant vaccine schedule.
+The purpose of this double-blind, randomised, controlled trial is to compare allergic outcomes in children following vaccination with acellular pertussis (aP) antigen (standard of care in Australia) given at 2 months of age versus whole cell pertussis (wP) in the infant vaccine schedule.
 
 \parttitle{Participants} %if any
 Up to 3,000 Australian infants 6 to \textless 12 weeks of age born $\geq$ 32 weeks gestation.
 
 \parttitle{Interventions} %if any
-The intervention is a wP containing vaccine as first scheduled dose instead of an aP containing vaccine.
+The intervention is a wP containing vaccine as the first scheduled pertussis vaccine dose instead of an aP containing vaccine.
 
 \parttitle{Outcomes} %if any
-The primary outcome is a binary indicator of IgE-mediated food allergy at the age of 12 months and confirmed, where necessary, before 18 months of age. Secondary outcomes include: (1) parent-reported clinician-diagnosed new onset of atopic dermatitis by 6 or 12 months of age with a positive skin prick test to any allergen by 12 months of age; (2) a fourfold or greater rise in pertussis toxin-specific IgG, 21 to 35 days after booster dose of aP at 18 months of age; (3) sensitisation to at least one allergen by 12 months of age.
+The primary outcome is a binary indicator of hisory of IgE-mediated food allergy at the age of 12 months confirmed, where necessary, with an oral food challenge before 18 months of age. Secondary outcomes include: (1) history of parent-reported clinician-diagnosed new onset of atopic dermatitis by 6 or 12 months of age with a positive skin prick test to any allergen before 12 months of age; (2) geometric mean concentration in pertussis toxin-specific IgG before and 21 to 35 days after a booster dose of aP at 18 months of age; (3) sensitisation to at least one allergen by 12 months of age.
 
 \parttitle{Discussion} %if any
 A detailed, prospective statistical analysis plan (SAP) is presented for this Bayesian adaptive design. 
@@ -194,7 +218,7 @@ Application of this SAP will minimise bias and supports transparent and reproduc
 \parttitle{Trial registration}
 Australia \& New Zealand Clinical Trials Registry (ACTRN12617000065392).
 
-\parttitle{Study protocol} REFER TO PUBLISHED PROTOCOL HERE
+\parttitle{Study protocol} https://doi.org/10.1136/bmjopen-2020-042838
 
 
 
@@ -256,32 +280,32 @@ Australia \& New Zealand Clinical Trials Registry (ACTRN12617000065392).
 %%
 \section*{Introduction}
 
-Combination vaccines containing whole-cell pertussis (wP) antigens were phased out from the Australian national immunisation program between 1997 and 1999 and replaced by the less reactogenic acellular pertussis (aP) antigens.
-In a large case-control study of Australian children born during the transition period, those with allergist diagnosed IgE-mediated food allergy were less likely to have received whole-cell vaccine in early infancy than matched population controls [odds ratio: 0.77, 95\% confidence interval (0.62, 0.95)] \cite{estcourt2020whole}.
-We hypothesise that a single dose of whole-cell vaccine in early infancy is protective against IgE-mediated food allergy.
+Combination vaccines containing whole-cell pertussis (wP) antigens were phased out from the Australian National Immunisation Program (NIP) between 1997 and 1999 and replaced by vaccines containing less reactogenic acellular pertussis (aP) antigens.
+In a case-control study of Australian children born during the transition period, those with allergist diagnosed IgE-mediated food allergy were less likely to have received whole-cell vaccine in early infancy than matched population controls [odds ratio: 0.77, 95\% confidence interval (0.62, 0.95)] \cite{estcourt2020whole}.
+We hypothesise that a single dose of whole-cell vaccine in early infancy is protective against IgE-mediated food allergy in early childhood.
 
-This statistical analysis plan (SAP) provides \textit{a priori} specification of the decision-making rules and the statistical methods to be used. 
-The SAP was prepared after data collection had commenced, but prior to observing any of the data. 
-The coordinating principal investigator [TS?] was responsible for approving and signing off the SAP, and the document has also been reviewed and approved by an independent data monitoring safety board (DMSB). 
-The SAP is consistent with the CONSORT 2010 Statement and further guidelines and supports transparent and reproducible research.
+This statistical analysis plan (SAP) provides \textit{a priori} specification of the decision-making rules and the statistical methods to be used in a prospective clinical trial. 
+The SAP was prepared after data collection had commenced, but prior to any unblinded data analyses. 
+The coordinating principal investigator was responsible for approving the SAP, and it was reviewed and approved by the trial independent data monitoring safety board (DMSB). 
+The SAP is written to be consistent with the CONSORT 2010 Statement and further guidelines and supports transparent and reproducible research.
 
 \section*{Study Synopsis}
 
-The OPTIMUM trial is a phase IV, prospective, multi-centre, two-armed, double-blinded, randomised, superiority, adaptive clinical trial designed to assess the efficacy of a first scheduled dose of diptheria tetanus whole-cell pertussis (DTwP) vaccine in preventing food allergy, compared to the standard first scheduled dose of diptheria tetanus acellular pertussis (DTaP) vaccine in healthy, vaccine-eligible infants aged 6 to \textless12 weeks born at \(\geq\) 32 weeks gestation in Australia.
-
+The OPTIMUM trial is a phase IV, two-armed, prospective, multi-site double-blinded, adaptive, randomised clinical trial designed to assess the effectiveness of a first scheduled dose of wP vaccine for preventing food allergy, compared to the standard aP vaccine in healthy, vaccine-eligible Australian infants aged 6 to \textless12 weeks born at \(\geq\) 32 weeks gestation in Australia.
 The trial uses a Bayesian group-sequential design with pre-specified stopping rules informed by predictive probabilities of trial outcomes given the data available at interim analyses.
+
+The protocol defines two stages of the trial.
+During stage one, 150 participants were recruited from Perth Children's Hospital (PCH), Western Australia between January 2018 and January 2020.
+Stage 2 will expand the trial to include sites in Sydney and Melbourne randomising up to 3,000 participants including the 150 from stage 1.
+The stage 1 and stage 2 schedules of assessment are available in the previously published protocol \cite{perez2020}.
 
 \section*{Interventions}
 
-Eligible participants will be randomised to receive a 0.5 ml dose of the WHO-prequalified pentavalent formulation of diptheria-tetanus-pertussis (whole-cell)-Hepatitis-B- \textit{Haemophilus influenzae} type b vaccine (DTwP-HB-Hib) (PENTABIO\textregistered PT, Bio Frama, study vaccine), or else a hexavalent formulation of DTaP-HB-Hib plus inactivated poliovirus vaccine (IPV) (INFANRIX HEXA\textregistered, GlaxoSmithKline, comparator vaccine), as the first dose of the pertussis vaccination schedule between 6 to \textless 12 weeks of age.
+Eligible participants will be randomised to receive a 0.5 ml dose of the WHO-prequalified pentavalent formulation of diptheria-tetanus-pertussis (whole-cell)-hepatitis-B- \textit{Haemophilus influenzae} type b vaccine (DTwP-HB-Hib) (PENTABIO\textregistered PT, Bio Frama, study vaccine), or else a hexavalent formulation of DTaP-HB-Hib plus inactivated poliovirus vaccine (IPV) (INFANRIX HEXA\textregistered, GlaxoSmithKline, comparator vaccine), as the first dose of the pertussis vaccination schedule between 6 to \textless 12 weeks of age.
 This is given via intramuscular injection into the anterolateral aspect of the right thigh.
-Other scheduled 6-week doses are co-administered per Australia's national immunisation program.
+Other scheduled 6-week doses are co-administered as per Australia's National Immunisation Program.
 
 \section*{Study Population}
-
-Stage 1 of the study is being conducted at the Perth Children's Hospital in Perth (PCH), Western Australia.
-Recruitment started in January 2018, with the 150th participant randomised in January 2020.
-Stage 2 will also include sites in Sydney and Melbourne.
 
 \subsection*{Inclusion Criteria}
 
@@ -297,8 +321,8 @@ An eligible infant must fulfil all the following:
 	\item Parent or LAR has access to a telephone.
 	\item Parent or LAR who is able and willing to comply with the requirements of the protocol in the opinion of an investigator.
 	\item Parent or LAR is willing to allow other parties involved in the treatment of their child (including general practitioner, medical centre staff and any other medical professionals the child may be a patient of for the duration of the trial) to be notified of their participation in the trial and for participation in the trial to be recorded within the Australian Immunisation Register (AIR). The parent/LAR is willing to allow the study team to obtain a vaccination history from AIR and/or local provider.
-	\item Parent or LAR is willing to allow the study team to obtain information from the infants doctor, other health care professionals, hospitals or laboratories concerning the infants health from enrolment until 1 month after the 18-month vaccinations.
-	\item Infant available for the entire study period.
+	\item Parent or LAR is willing to allow the study team to obtain information from the infants doctor, other health care professionals, hospitals or laboratories concerning the infant's health from enrolment until 1 month after the 18-month vaccinations.
+	\item Infant is available for the entire study period.
 \end{itemize}
 
 
@@ -310,7 +334,7 @@ The participant may not enter the trial if any of the following apply:
 	\item History of pre-existing parent-reported clinician diagnosed IgE-mediated food allergy.
 	\item History of parent-reported, clinician-diagnosed pertussis infection.
 	\item Receipt of any prior vaccine, except for a single birth dose of hepatitis B vaccine within the first 7 days of life (only for visit 1).
-	\item Contraindication to any routine infant immunisation: History of allergy, including anaphylaxis, to any vaccine or vaccine component.
+	\item Contraindication to any routine infant immunisation: history of allergy, including anaphylaxis, to any vaccine or vaccine component.
 	\item Contraindication to paracetamol.
 	\item Receipt of investigational vaccines/drugs, other than the vaccines used in the study, since birth or their planned use during the study period, until the final study visit (i.e.~at approximately 19 months of age).
 	\item Receipt, or planned receipt, of any non-routine vaccines within 14 days after the first dose of pertussis containing vaccine.
@@ -350,125 +374,95 @@ The data would, however, continue to be included in the intention-to-treat (ITT)
 	\end{itemize}
 \end{itemize}
 
-\section*{Objectives, Outcomes, and Estimands}
-
-For all objectives, the population of interest are infants meeting the inclusion/exclusion criteria for the study.
+\section*{Objectives and Outcomes}
 
 \subsection*{Primary}
 
-The primary objective, outcome and estimand is summarised in Table \ref{tab:objective-estimands-outcomes-primary} and applies to all participants enrolled into the study.
+The primary objective is to determine whether, compared to the standard strategy of 3 priming doses of aP (aP-only), a mixed wP/aP schedule (first dose of wP followed by doses of aP) protects against the development of IgE-mediated food allergy.
 
-\begin{table}[!ht]
-	\caption{Primary objective, estimand, and outcome.}
-	\label{tab:objective-estimands-outcomes-primary}
-	\begin{tabular}{p{4cm}p{4cm}p{4cm}}
-		Objective & Estimand & Outcome \\ \hline
-		To determine whether, compared to three priming doses of aP, a mixed wP/aP schedule (first dose of wP followed by doses of aP) protects against the development of IgE-mediated food allergy.
-	& \textbf{Population:} The population of infants as defined by the protocol inclusion/exclusion criteria. \newline \textbf{Treatment:} The effect of being assigned to the planned vaccination policy. \newline \textbf{Summary:} The proportion of participants with the primary outcome compared between the two planned treatment regimens.
-		&
-		IgE-mediated food allergy at the age of 12 months and confirmed, where necessary by oral food challenge (OFC), before 18 months.
-		A participant will be considered to have the outcome if there is evidence of sensitisation to a food on skin prick test (SPT), and either:
-		\begin{itemize}
-			\item unequivocal IgE-mediated food allergy, defined as (i) a positive oral food challenge, or (ii) clinician-diagnosed food anaphylaxis, with symptoms affecting at least 2 of the following: skin, gastrointestinal tract, respiratory tract, and cardiovascular system,
-			\item highly probable IgE-mediated food allergy, defined as history of food allergic reaction consistent with PRACTALL criteria \cite{sampson2012standardizing}.
-		\end{itemize} \\
-		\hline
-	\end{tabular}
-\end{table}
+The primary outcome is history of IgE-mediated food allergy at the age of 12 months and confirmed, where necessary by oral food challenge (OFC), before 18 months.
+A participant will be considered to have the outcome if there is evidence of sensitisation to a food on skin prick test (SPT), and either:
+\begin{itemize}
+	\item unequivocal IgE-mediated food allergy, defined as (i) a positive oral food challenge, or (ii) history of clinician-diagnosed food anaphylaxis, with symptoms affecting at least 2 of the following: skin, gastrointestinal tract, respiratory tract, and cardiovascular system,
+	\item highly probable IgE-mediated food allergy, defined as history of food allergic reaction consistent with PRACTALL criteria \cite{sampson2012standardizing}.
+\end{itemize}
 
 \subsection*{Secondary}
 
-The secondary objectives, outcomes and estimands are summarised in Tables \ref{tab:objective-estimands-outcomes-clinical-mechanistic}.
-Some of these secondary objectives are assessed only in a subset of the enrolled participants.
-The stage 1 laboratory outcomes are only assessed in the first 150 participants enrolled into the study under the stage 1 protocol, and stage 2 laboratory outcomes are only assessed in the first 300 participants enrolled into a particular site under the stage 2 protocol.
+The protocol defines a number of secondary objectives and associated outcomes.
+These are numbered below.
 
-\begin{table}[!ht]
-	\caption{Secondary clinical and mechanistic objectives, estimands, and outcomes.}
-	\label{tab:objective-estimands-outcomes-clinical-mechanistic}
-	\begin{tabular}{p{4cm}p{4cm}p{4cm}}
-		Objective & Estimands & Outcomes \\ \hline
-		\textbf{Clinical} & & \\
-		Clinical allergy: to compare the rate of new onset atopic dermatitis in each study group. &
-		The population of infants as defined by the protocol inclusion/exclusion criteria.\newline
-		The effect of being assigned to the planned vaccination policy.\newline
-		The proportion of participants with the outcome compared between the two planned treatment regimens. &
-		A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 6 months of age and a positive SPT to any allergen by approximately 12 months of age.\newline
-		A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 12 months of age and a positive SPT to any allergen by approximately 12 months of age.
-		\\
-		\textbf{Mechanstic} & & \\
-		Allergic sensitisation: to compare the rate of SPT positivity to common allergens in each study group. &
-		The population of infants as defined by the protocol inclusion/exclusion criteria.\newline
-		The effect of being assigned to the planned vaccination policy.\newline
-		The proportion of participants with the outcome compared between the two planned treatment regimens. &
-		A SPT >1mm greater than the negative control to at least one allergen by approximately 12 months of age.\newline
-		A SPT $\geq$3mm greater than the negative control to at least one allergen by approximately 12 months of age.
-		\\
-		\hline
-	\end{tabular}
-\end{table}
+\subsubsection*{Clinical and mechanistic}
 
-\begin{table}[!ht]
-	\caption{Secondary objectives, estimands, and outcomes.}
-	\label{tab:objective-estimands-outcomes-laboratory}
-	\begin{tabular}{p{4cm}p{4cm}p{4cm}}
-		Objective & Estimands & Outcomes \\ \hline
-		\textbf{Stage 1-specific laboratory} & &  \\
-		Atopic immunophenotype: To compare the Th2 immunophenotypic response to tetanus toxoid and egg	antigens in infants in each	study group. &
-		The population of infants with no contraindications as defined by the protocol inclusion, exclusion, and elimination criteria. \newline 
-		The effect of the planned vaccination policy. \newline
-		At blood collection visits 3 and 5 (stage 1), for each outcome compare between the two treatment groups:
-		\begin{itemize}
-			\item Geometric mean concentration (GMC) in kU/L
-			\item \marginnote{\textit{NOTE: These outcomes condition on post-randomisation response at visit 3}}Geometric mean fold rise (GMFR) from visit 3 to visit 5
-			\item Proportion of participants achieving $\geq$4-fold rise from visit 3 to visit 5
-		\end{itemize} &
-		Total IgE concentration\newline 
-		IgE concentration to tetanus toxoid\newline 
-		IgE concentration to egg white-specific antigen \newline 
-		IgE concentration to whole egg-specific antigen \\
-		Determine if vaccine responses differ in each study group &
-		As above, but at blood collection visits 3, 5, 7 and 8 (stage 1), for each outcome compare between the two treatment groups:
-		\begin{itemize}
-			\item GMC in IU/mL
-			\item \marginnote{\textit{NOTE: These outcomes condition on post-randomisation response at visit 3}}GMFR from visit 3 to visit 5, 7, and 8.
-			\item Proportion of participants achieving $\geq$4-fold rise from visit 3 to visits 5, 7, and 8.
-		\end{itemize} &
-		Pertussis toxin (PT) specific IgG\newline 
-		Filamentous haemagglutinin (FHA) specific IgG\newline 
-		Pertactin (PRN) specific IgG
-		\\
-		& 		
-		As above, for each outcome compare between the two treatment groups: 
-		\begin{itemize}
-			\item GMC in IU/mL
-			\item Proportion of participants with concentrations greater than defined thresholds at visits 5, 7, and 8
-		\end{itemize} &
-		Pneumococcal vaccine serotype specific IgG\newline 
-		Polyribosylribitol phosphate (PRP, capsular polysaccharide of HiB) specific IgG\newline 
-		Tetanus toxoid specific IgG
-		\\
-		\textbf{Stage 2-specific laboratory} & &  \\
-		Determine if vaccine responses differ in each study group. &
-		The population of infants with no contraindications as defined by the protocol inclusion, exclusion, and elimination criteria. \newline 
-		The effect of the planned vaccination policy.\newline
-		For the outcome, to compare between the two treatment groups at visits 3 and 4 (stage 2):
-		\begin{itemize} 
-			\item GMC in IU/mL
-			\item GMFR from visit 3 to 4
-			\item Proportion with a $\geq$4-fold rise from visit 3 to 4
-		\end{itemize} &
-		Pertussis toxin (PT) specific IgG.
-		\\
-		\hline
-		\hline
-	\end{tabular}
-\end{table}
+\begin{enumerate}
+	\item Compare the rate of new onset atopic dermatitis in each study group:
+	two binary outcomes will be investigated:
+	\begin{enumerate}
+		\item A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 6 months of age and a positive SPT to any allergen by approximately 12 months of age.
+		\item A history of parent-reported clinician-diagnosed new onset atopic dermatitis by 12 months of age and a positive SPT to any allergen by approximately 12 months of age
+	\end{enumerate}
+	\item Compare the rate of SPT positivity to common allergens in each study group:
+	two binary outcomes will be investigated:
+	\begin{enumerate}
+		\item A SPT wheals $>$1mm greater than the negative control to at least one allergen by approximately 12 months of age.
+		\item A SPT wheals $\geq$3mm greater than the negative control to at least one allergen by approximately 12 months of age.
+	\end{enumerate}
+\end{enumerate}
 
+\subsubsection*{Stage 1 atopic immunophenotypic response and vaccine response}
+
+\begin{enumerate}[resume]
+	\item Compare the Th2 immunophenotypic response to tetanus toxoid and egg antigens in infants in each study group:
+	IgE concentrations to the following antigens will be collected at ages 6 (immediately prior to third pertussis-containing vaccine dose) and 7 months (21-35 days after vaccination) using ImmunoCAP total and antigen specific IgE assays (Thermo Fisher Scientific/Phadia, Uppsala, Sweden) during stage 1 only (150 participants):
+	\begin{enumerate}
+		\item Total IgE concentration
+		\item IgE concentration to tetanus toxoid vaccine antigen
+		\item IgE concentration to egg white antigen
+		\item IgE concentration to whole egg antigen
+	\end{enumerate}
+	Assays will be in KU IgE/L per sample.
+	IgE levels $\geq$ 0.35 KU/L are considered positive.
+\end{enumerate}
+
+\begin{enumerate}[resume]
+	\item Compare vaccine antibody responses in each study group:
+	vaccine antigen-specific IgG concentrations/titres will be measured at ages 6, 7, 18, and 19 months using a multiplex fluorescent bead assay \cite{van2008development}, for the following during stage 1 only (150 participants).
+	\begin{enumerate}
+		\item Pertussis toxin (PT)
+		\item Filamentous haemagglutinin (FHA)
+		\item Pertactin (PRN)
+		\item Tetanus toxoid (TT)
+		\item Polyribosylribitol phosphate (HiB-PRP)
+		\item 13-valent pneumococcal vaccine serotypes
+		\item Hepatitis B surface antigen (HBsAg)
+		\item Diphtheria toxoid (DT)
+	\end{enumerate}
+	The seroprotective/seropositivity thresholds are as follows:
+	\begin{itemize}
+		\item $\geq 5$ IU/mL for PT, FHA, and PRN
+		\item $\geq 0.1$ IU/mL  for TT \cite{whotetanus} and DT
+		\item $\geq 0.1$ mIU/mL for HBsAg
+		\item $\geq 1$ $\mu$g/mL for HiB-PRP \cite{kayhty1983protective}
+		\item $\geq 0.35$ $\mu$g/mL for pneumococcal serotypes \cite{siber2007estimating,whopneumo}
+	\end{itemize}
+	For each antigen, we will assess the ratio of the geometric mean titres (GMT) and concentrations (GMC) across study groups at each time point, the fold-rise in concentration from 18 to 19 months, and seroprotection/seropositivity.
+	A 4-fold rise or greater will be considered indicative of seroconversion.
+\end{enumerate}
+
+\subsubsection*{Stage 2 vaccine response}
+
+\begin{enumerate}[resume]
+	\item Compare vaccine antibody responses in each study group:
+	PT-specific IgG concentrations will continue to be measured at ages 18 and 19 months in stage 2 up to a maximum of 300 participants 
+	unless non-inferiority of wP/aP compared to aP is established earlier.
+\end{enumerate}
+
+Additional details of outcome definitions and assays are available in the protocol.
 
 \section*{Randomisation}
 
 Eligible participants will be randomised in 1:1 allocation to receive the study or comparator vaccine.
-Randomisation is by computer-generated allocation sequence prepared by the trial statistician [JT] and based on randomly permuted blocks of size 6, 8 or 10.
+Randomisation is by computer-generated allocation sequence prepared by the trial statistician [JT] and based on randomly permuted blocks of size 6, 8 or 10, and stratified by study site.
 The randomisation codes are password-protected and held by the trial statistician.
 
 \section*{Blinding}
@@ -498,128 +492,157 @@ We estimated a 69\% probability of stopping early for futility if the null were 
 \subsection*{Baseline characteristics}
 
 All subjects who were invited to participate in this trial will be accounted for, and a CONSORT flow chart will be prepared.
-Reasons for early withdrawal will be listed for all participants that prematurely withdrew from the study.
-The number of participants that were screened but not randomised will be presented and the reasons for their non-participation will be listed (where available).
-Numbers of participants who were randomised, fulfilled eligibility criteria, and number randomised by study centre, will be summarised.
+Reasons for early withdrawal will be listed for all participants who prematurely withdraw from the study.
+The number of participants who are screened but not randomised will be presented and the reasons for their non-participation will be listed (where available).
+The number of participants who are randomised, the number who fulfill eligibility criteria, and the number who are randomised by study centre, will be summarised.
 
-The comparability of treatment groups and study sites with respect to demographic and other potentially prognostic variables will be summarised.
+The trial participants will be summarised according to baseline variables.
 The data for each baseline variable will be presented descriptively.
-Quantitative variables will be summarised by mean, standard deviation, median, minimum and maximum.
-Qualitative variables will be summarised by counts and rates.
+Quantitative variables will be summarised by median and inter-quartile range (IQR).
+Qualitative variables will be summarised by counts and proportions.
 
 Summaries of the following baseline data will be included:
 
 \begin{itemize}
 	\item site of enrolment
 	\item gender
-	\item place of residence
+	\item place of residence (state)
 	\item number and order of siblings
 	\item pet ownership
 	\item breastfeeding status (exclusively, partially, or not fed with breast milk in the week before enrolment)
 	\item infant's ethnicity
 	\item parental country of birth
 	\item parental education (highest achievement: primary school, secondary school, TAFE or trade certificate, bachelor-level university degree, post-graduate university qualification)
-	\item combined parental income
-	\item $\geq$2 first degree relatives with asthma, allergic rhinitis, atopic dermatitis, or IgE-mediated allergy
-	\item mother received pertussis booster vaccination in preceding pregnancy
+	\item combined parental income (<\$18,000, \$18,000 to \$37,000, \$37,001 to \$87,000, \$87,001 to \$180,000, >\$180,000) 
+	\item $\geq$2 first degree relatives with clinician-confirmed asthma, allergic rhinitis, atopic dermatitis, or IgE-mediated allergy
+	\item other maternal pertussis booster vaccination within the last 5 years (not including preceding pregnancy)
 \end{itemize}
 
 \subsection*{Analysis Sets}
 
 The planned analysis populations are defined as in Table \ref{tab:analysis-sets}.
 
+\renewcommand{\arraystretch}{2}
 \begin{table}[!ht]
 	\caption{Pre-defined analysis sets to be used in summaries and analyses.}
 	\label{tab:analysis-sets}
 	\begin{tabular}{lp{8cm}}
 		Population & Description \\ \hline
-		All randomised & All participants who were enrolled and randomised to a treatment group. \\
-		Intention-to-treat & All randomised participants with their treatment group as randomised. Participants who received vaccines/medications violating the exclusion criteria but were enrolled will be included. \\
-		Per-protocol & All randomised participants who received as planned the vaccine policy to which they were randomised, and who completed the whole study period (complete cases) according to the protocol (satisfied all inclusion and exclusion criteria, all visits on schedule).
+		Intention-to-treat (ITT) & All randomised participants with their treatment group as randomised. Participants who received vaccines/medications violating the exclusion criteria but were enrolled will be included. \\
+		Per-protocol (PP) & All randomised participants who received as planned the vaccine strategy to which they were randomised, and who completed the whole study period according to the protocol (satisfied inclusion and exclusion criteria, and visits as scheduled).
 		\\
-		Stage 1 immunogenicity & All participants in the per-protocol set who were enrolled under stage 1 protocol at the Perth Children's Hospital (PCH)/Telethon Kids Institute site and satisfied all stage 1 elimination criteria and did not receive any contraindicated vaccines or medications for stage 1. This will be at most 150 participants. \\
-		Stage 2 immunogenicity & All participants in the per-protocol set who were amongst the first 300 participants enrolled under stage 2 protocol recruited at PCH/Telethon Kids Institute site (consented for the blood samples) and who did not receive any contraindicated medications for stage 2. \\
+		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at the Perth Children's Hospital (PCH)/Telethon Kids Institute site and who met none of the stage 1 elimination criteria and who did not receive any contraindicated vaccines or medications for stage 1.\\
+		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the inclusion of the additional participants enrolled under the stage 2 protocol at PCH/TKI who consented for the blood samples and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
 		\hline
 	\end{tabular}
 \end{table}
+\renewcommand{\arraystretch}{1.25}
 
 \subsection*{Analysis of Primary Outcome}
 
 Descriptive counts and proportions of the primary outcome will be tabulated by treatment group, including the number of inconclusive results.
 
-For modelling, interest lies in the measure of effect of the study vaccine on the primary endpoint relative to the comparator vaccine, denoted by \(\delta\).
-Depending on the model, this might represent the difference in proportions meeting the primary outcome, or some transformation of these proportions (odds ratio).
+Inferences for the primary outcome will be based on Bayesian models. Interest lies in the measure of effect of assignment to the study vaccine on the primary endpoint relative to the comparator vaccine, denoted by \(\delta\).
+Depending on the model, this might represent the difference in proportions meeting the primary outcome, or some transformation of these proportions (log odds-ratio).
 In either case, the primary statistical hypotheses are:
 $$
 \textrm{H}_0:\delta\geq 0\ \text{vs. } \mathrm{H}_1:\delta <0
 $$
 
-At the final analysis, evidence of effect will be measured as the posterior probability that $\delta < 0$ (that is, the study vaccine reduces IgE-mediated food allergy), conditional on the specified model given the data observed.
+At the final analysis, evidence of effect will be quantified as the posterior probability that $\delta < 0$ (that is, assignment to the study vaccine reduces the risk of IgE-mediated food allergy), conditional on the specified model given the data observed.
 If this posterior probability meets a pre-specified threshold of evidence, \(q\), then a decision of superiority is recommended at the final analysis (trial success).
 The decision rule is (conditional on data $D$):
 $$
 d(D) = \begin{cases}
 \text{success} & \text{if } \mathbb{P}(\delta<0|D)>q \\
-\text{failure}\ & \text{otherwise}
+\text{failure}\ & \text{otherwise}.
 \end{cases}
 $$
 
-For this study, the threshold for superiority is set to $q=0.95$.
-This value was chosen based on extensive simulation studies investigating the effect of the interim analysis stopping rules on the rate of false positives, false negatives, and expected sample size.
+For this study, the threshold for assessing superiority is $q=0.95$.
+This value was chosen based on simulation studies investigating the effect of the interim analysis stopping rules on the probability of false positives, false negatives, and expected sample size.
 
-Although superiority is recommended by the formal test of the above hypotheses, the effect size will be presented as a summary (mean, median, and 95\% credible interval) of the posterior density obtained at the final analysis.
+Although superiority is recommended by the formal test of the above hypotheses, effect sizes will be presented as summaries (mean, median, and 95\% credible interval (CrI)) of the posterior density obtained at the final analysis in addition to the posterior probability of superiority.
 
 The primary analysis of the outcome will use independent Beta-Binomial models for the response proportion in the two study arms.
-In this case, $\delta=\theta_w-\theta_a$, the difference in probability of IgE-mediated food allergy between the two vaccine schedules.
+In this case, $\delta=\theta_w-\theta_a$, the difference in probability of IgE-mediated food allergy between the two vaccine strategies.
 In this analysis, data will be pooled across sites.
 $\text{Beta}(1,1)$ priors will be assumed for both response probabilities.
 
 \subsection*{Adjusted Analysis}
 
-A secondary supportive analysis of the primary outcome will use logistic regression to estimate covariate adjusted odds ratio associated with the study vaccine.
-In this model the effect, $\delta$ relates to the change in log-odds of the primary outcome associated with the study vaccine, conditional on shared covariates.
-The prognostic baseline covariates to be included are:
+A secondary supportive analysis of the primary outcome will use logistic regression to estimate a covariate adjusted odds ratio associated with the study vaccine strategy.
+The prognostic baseline covariates to be included as fixed effects are:
 \begin{itemize}
 	\item gender
-	\item ...
+	\item study site
+	\item breastfeeding status (exclusively, partially, or not fed with breast milk in the week before enrolment)
+	\item birth order (first born, versus subsequent birth order)
+	\item combined parental income (<\$18,000, \$18,000 to \$37,000, \$37,001 to \$87,000, \$87,001 to \$180,000, >\$180,000)
 \end{itemize}
 
 We will specify weakly informative Student t priors for regression coefficients with 4 degrees of freedom, 0 mean, and standard deviation of 1.75.
-
 Inference will be based on Markov chain Monte Carlo (MCMC) samples.
-Results will be presented as posterior summaries of model parameters and the posterior probability of superiority.
 
 \subsection*{Analysis of Secondary Outcomes}
 
 \subsubsection*{Clinical and Mechanistic}
 
-Based on the intention-to-treat and per-protocol analysis sets, the proportion of participants with each clinical and mechanistic outcome response will be reported.
-Unadjusted 95\% CI for the difference in proportions between the study vaccine and comparator will be calculated using the Newcombe Hybrid Score (NHS) interval \cite{newcombe1998interval}.
-Any adjusted analyses will use logistic regression models where the mean and 95\% confidence intervals on the odds ratio associated with receiving the study vaccine will be reported along with any other model parameters.
+Based on the intention-to-treat (ITT) and per-protocol (PP) analysis sets, the proportion of participants with each clinical and mechanistic outcome response will be reported.
+Unadjusted posterior summaries for the difference in proportions between the study vaccine and comparator will be calculated using Beta-Binomial models as for the primary outcome.
+Adjusted analyses will use logistic regression models where posterior summaries of the adjusted odds ratio associated with receiving the study vaccine will be reported along with any other model parameters.
+These models will adjust for the same covariates as in the adjusted model for the primary outcome and use the same priors.
 
-\subsubsection*{Laboratory - Stage 1 and 2}
+\subsubsection*{Laboratory - stage 1 atopic immunophenotypic response}
 
-The sensitivity of the assay for total IgE concentrations is between 2 kU/L and 5,000 kU/L.
-Antigen specific IgE will be reported in concentrations with ranges from 0.00 to 100.00 kU/L.
-Results outside these limits will be reported as above or below the detection limit.
+The sensitivity of the assay for total IgE and antigen-specific IgE concentrations will be reported.
+Results outside the limits of detection will be reported as above or below the detection limit.
 
-For the IgG concentrations...
+For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
 
-When necessary for analyses, concentrations will be $\text{log}_{10}$ transformed.
-Concentrations outside the detection limits will be treated as censored in analyses.
-
-For each outcome and visit, we will report by treatment group for the stage 1 and stage 2 immunogenicity analysis sets:
+For each outcome, we will report by treatment group and visit for the stage 1 assay analysis sets:
 \begin{itemize}
-	\item the range of concentrations
-	\item the proportion of concentrations outside detection limits
+	\item the median and range of concentrations
 	\item the proportion of missing concentrations
+	\item the proportion of concentrations above/below detection limits
+	\item the proportion of concentrations exceeding the positive response threshold
 	\item Kaplan-Meier plots of concentrations
 \end{itemize}
 
-For inferences, the mean concentrations (and 95\% CrI) will be estimated using censored linear mixed models assuming that concentrations are log-normally distributed with a fixed treatment effect, fixed effects for visit, interactions between visit and treatment, and participant specific effects. Sensitivity analyses will investigate serial correlation and heterogeneity of variances by visit schedule.
+Inferences for geometric mean concentrations (GMC) will assume censored multivariate normal models for log-concentrations by visit with unstructured covariance matrices and visit by treatment specific means.
+If issues arise with the covariance structure, a simpler covariance model will be assumed, such as heterogenous compound symmetry.
+Weakly informative priors (Normal(0, 1), will be specified for parameters in the linear predictor, an LKJ(1) prior on the correlation matrix, and Cauchy(0, 2.5) on the standard deviations.
 
-(ALTERNATIVELY, PERHAPS PREFERABLY, MODEL LOG CONCENTRATIONS AS CENSORED MULTIVARIATE NORMAL WITH UNSTRUCTURED COVARIANCE, SENSITIVITY ANALYSES VARYING THE ASSUMED COVARIANCE STRUCTURE)
+Inferences for relative proportions exceeding positive response threshold by study group will assume logistic regression models with a fixed term for treatment group, visit, and their interaction.
 
+\subsubsection*{Laboratory - stage 1 and 2 vaccine response}
+
+The sensitivity of each assay will be reported.
+Results outside the limits of detection will be reported as above or below the detection limit.
+
+For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored in analyses.
+
+For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 (PT only) assay analysis sets:
+\begin{itemize}
+	\item the GMC/GMT and range of concentrations
+	\item the proportion of missing concentrations
+	\item the proportion of concentrations above/below detection limits
+	\item the proportion of concentrations exceeding the seroprotective/seropositivity thresholds
+	\item the proportion of participants with a 4-fold or greater increase in their concentration from 18 to 19 months 
+	\item Kaplan-Meier plots of concentrations
+\end{itemize}
+
+Inferences for relative GMC and proportions will use the same modelling approach as for the atopic immunophenotypic response outcomes.
+
+Non-inferiority of the wP vaccine strategy compared to the standard aP vaccine strategy with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMC ratio.
+That is, if the GMC ratio for a particular antigen and visit is defined as
+$$
+\text{GMR} = \frac{\text{GMC}_\text{wP}}{\text{GMC}_\text{aP}}
+$$ 
+then non-inferiority will be evaluated according to
+$$
+\mathbb P\left[\text{GMR}\geq \frac{2}{3}\Big\vert \text{data}\right].
+$$
 
 \subsection*{Subgroup Analyses}
 
@@ -631,18 +654,18 @@ Any such subgroup analyses will be noted as being post-hoc.
 This trial includes interim analyses to be undertaken at pre-specified sample sizes to recommend whether the trial should be stopped early for futility or expected success.
 
 The recommendations are made in accordance with pre-specified stopping rules based on the data available at the time of the interim.
-The decisions on whether to stop are informed by Bayesian predictive probabilities of treatment effect.
+The decisions on whether to stop are informed by Bayesian predictive probabilities of treatment effect \cite{spiegelhalter2004bayesian}.
 
 Interim analyses begin after 200 subjects have complete primary outcome data.
-Subsequent interim analyses will occur every additional 200 subjects with complete primary outcome data until either a stopping rule is met, or enrolment is close to completion.
+Subsequent interim analyses will occur after every additional 200 subjects with complete primary outcome data until either a stopping rule is met, or enrolment completed.
 Once a decision to stop has been made, or enrolment has reached the maximum sample size, enrolment will cease and all participants will be followed to study completion.
 
 The process for interim decisions is as follows.
 Let $\mathbb P(\delta < 0|D_k)$ denote the posterior probability of superiority under the specified model given data up to interim $k=1,2,...,K$ where complete data from $n_k$ participants are available.
 We specify a prediction model, $f(\tilde D_k|D_k)$ for future outcome data $\tilde D_k$ that uses the data observed so far, marginalised over any uncertainty in the prediction model parameters.
-Using predictions of the primary outcome for subjects enrolled who are yet to complete follow-up, and subjects yet to be enrolled, the stopping decision is based on the predicted outcome of the trial (in terms of the decision rule used at the final analysis) if it were stopped now (with follow-up completed on enrolled participants), or continued to the maximum sample size, given what has been observed up to interim $k$.
+Using predictions of the primary outcome for subjects enrolled who are yet to complete follow-up, as well as subjects yet to be enrolled, the stopping decision is based on the predicted outcome of the trial (in terms of the decision rule used at the final analysis) if enrolment were stopped now (with follow-up completed on enrolled participants), or continued to the maximum sample size, given what has been observed up to interim $k$.
 
-The predicted probability of success (PPoS) is calculated as
+The predicted probability of success (PPoS) \cite{berry2010bayesian} is calculated as
 $$
 \text{PPoS}_k(q) = \mathbb E_{\tilde D_k | D_k}\left[\textbf{1}_{(q,1]}\left\{\mathbb P(\delta<0|D_k,\tilde D_k)\right\}\right]
 $$
@@ -650,11 +673,11 @@ and is the probability that superiority would be decided at a final analysis usi
 
 The value of \(\text{PPoS}_k\) depends on the specified prediction model.
 In this trial, the posterior predictive distribution of the primary analysis model is used as the prediction model.
-This is two independent beta-binomial distributions conditional on the observed responses in each treatment group.
+This is two independent Beta-Binomial distributions conditional on the observed responses in each treatment group.
 
 \subsubsection*{Stopping Rules}
 
-Two stopping rules are specified: expected success and futility.
+Two stopping rules are specified: 1) expected success and 2) futility.
 At each planned interim analysis $k=1,2,...,K$, let $n_i^k$ denote the number of participants in arm $i$ who have reached the primary endpoint by the time of interim $k$.
 Let $y_i^k$ denote the number of participants in arm $i$ out of $n_i^k$ who had a response and $D_k$ denote all the available data.
 In addition to the participants with observed outcomes at interim $k$, there are $m_i^k$ participants enrolled in arm $i$, of which some unknown $\tilde w_i^k$ will have a future response. There are also $l_i^k$ participants who could still be enrolled into arm $i$ (in 1:1 allocation up to maximum sample size) of which some unknown $\tilde z_i^k$ will have a future response.
@@ -673,41 +696,48 @@ d(D_k)=\begin{cases}
 \text{stop for expected success} & \text{if } \text{PPoS}_k^0(q) > \overline{c}_k \\
 \text{stop for futility} & \text{if } \text{PPoS}_k^1(q) < \underline{c}_k \\
 \text{continue to analysis }k+1 &\text{otherwise}
-\end{cases}
+\end{cases} \quad k=1,...,K
 $$
-where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ as selected by simulation.
+where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ for all $k$ which were selected based on simulations.
 
 \subsection*{Missing Data}
 
-.....
+Reasons for missingness will be summarised.
+Patterns and predictors of missingness will also be investigated and summarised.
+Descriptive and summary statistics will generally be based on complete-cases data.
+The primary analyses will be based on complete-cases.
+Secondary analyses using multiple imputation for missing responses and covariates will be undertaken to investigate sensitivity of the results.
 
 \subsection*{Sensitivity Analyses}
 
-.....
+Sensitivity of results to the specified priors will be investigated by estimating parameters under different prior configurations than those used in the primary analyses.
+In particular, the hyperparameter for prior variances will be varied to assess how conclusions may change under varying strength of the prior.
 
 \section*{Operating Characteristics}
 
-The operating characteristics of the OPTIMUM trial were estimated using Monte Carlo methods specifying various scenarios for the data generating process. The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
+The operating characteristics of the OPTIMUM trial were estimated using Monte Carlo methods assuming 
+various scenarios for the data generating process. 
+The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
 
 \subsection*{Scenarios}
 
 A first interim analysis is scheduled to occur when primary endpoint data is available on 200 subjects.
-Subsequent interim analyses occur every additional 200 subjects with available endpoint data until fewer than 100 subjects remain to be enrolled, or enrolment is complete.
+Subsequent interim analyses occur after every additional 200 subjects with available endpoint data until a stopping rule is met, or enrolment is already complete at the maximum sample size of 3,000.
 
 Trial data was generated allowing variations in: accrual rate and pattern of accrual, time to primary endpoint, true response probability in the control and treatment arms, and decision thresholds.
 
 Accrual was assumed to follow a non-homogeneous Poisson process and we investigated varying the baseline rate and varying the shape of accrual by allowing for slow initial accrual and a ramp-up in the latter stages of the trial.
-We assumed baseline accrual of 16 per week, and 5 per week (slow accrual is worst case for false positives), and ramp-up accrual.
+We assumed baseline accrual of 16 per week, and 5 per week (slow accrual is worst case for false positives), and a gradually increasing rate of accrual.
 
 Time to primary outcome was assumed to be uniform between 48 and 72 weeks (mean 60 weeks) post-randomisation.
 
-The probability of food-allergy within the comparator vaccine, $\theta_a^\star$, and study vaccine, $\theta_w^\star$, populations investigated were $\theta_a^\star=0.1$ and $\theta_w^\star\in\{0.05, 0.06, 0.07, 0.08, 0.09,0.1\}$.
+The probability of food-allergy within the standard aP vaccine strategy, $\theta_a^\star$, and study wP vaccine strategy, $\theta_w^\star$, populations investigated were $\theta_a^\star=0.1$ and $\theta_w^\star\in\{0.05, 0.06, 0.07, 0.08, 0.09,0.1\}$.
 Data were generated as Bernoulli random variables using the specified probability with time of enrolment generated from the accrual specification, and time to response generated from the time to outcome specification.
 
 A grid of decision threshold values was investigated across all scenarios.
 For the final analysis, posterior probability thresholds of $q\in\{0.95,0.955,0.96,0.965,0.97\}$ were investigated.
-Futility thresholds were fixed across all interim analyses and set to $\underline{c}_k\in\{0,0.025,0.05,0.075,0.1,0.2\}$.
-Expected success thresholds were fixed across all interim analyses and set to $\overline{c}_k\in\{0.8,0.9,0.925,0.95,0.975,1\}$.
+Futility thresholds were fixed across all interim analyses and set to $\underline{c}\in\{0,0.025,0.05,0.075,0.1,0.2\}$.
+Expected success thresholds were fixed across all interim analyses and set to $\overline{c}\in\{0.8,0.9,0.925,0.95,0.975,1\}$.
 
 The scenarios explored are summarised in Table \ref{tab:scenarios}.
 
@@ -729,6 +759,68 @@ The scenarios explored are summarised in Table \ref{tab:scenarios}.
 	\end{tabular}
 \end{table}
 
+\subsection*{Results}
+
+Simulation results from all scenario combinations were based on 10,000 replications performed using R \cite{Rlang}.
+Results are presented here only for the 16 per week accrual scenario; the other scenarios are availalbe in a supplemental file.
+
+Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present power for superiority and expected sample size respectively over the grid of effect sizes and decision thresholds assuming constant accrual of 16 participants per week.
+Figures \ref{fig:stop_expect_success_16} and \ref{fig:stop_futility_16} present marginal stopping probabilities for expected success and futility respectively.
+
+\begin{figure}[!ht]
+	\caption{Probability of deciding superiority at the final analysis by decision thresholds and effect size assuming constant 16 per week accrual.}
+	\includegraphics{figures/superiority_16.pdf}
+	\label{fig:superiority_16}
+\end{figure}
+
+\begin{figure}[!ht]
+	\caption{Expected sample size by decision thresholds and effect size assuming constant 16 per week accrual.}
+	\includegraphics{figures/expected_ss_16.pdf}
+	\label{fig:expected_ss_16}
+\end{figure}
+
+\begin{figure}[!ht]
+	\caption{Marginal stopping probability for expected success by stage, effect size, and thresholds assuming constant 16 per week accrual and futility bound $\underline{c}=0.05$.}
+	\includegraphics{figures/stop_expect_success_16.pdf}
+	\label{fig:stop_expect_success_16}
+\end{figure}
+
+\begin{figure}[!ht]
+	\caption{Marginal stopping probability for futility by stage, effect size, and thresholds assuming constant 16 per week accrual and expected success bound $\overline{c}=0.95$.}
+	\includegraphics{figures/stop_futility_16.pdf}
+	\label{fig:stop_futility_16}
+\end{figure}
+
+Table \ref{tab:oc1} summarises the operating characteristics assuming thresholds $q=0.95$, $\underline{c}=0.05$, and $\overline{c}=0.95$ which were the thresholds chosen for the trial.
+False positives occurred with approximate probability of 0.05.
+The estimated probability of correctly declaring success was 0.85 when the effect was a reduction (by 30\%) from 0.1 to 0.07 in the primary outcome probabilities.
+
+\begin{table}
+	\caption{\label{tab:oc1}Trial operating characteristics assuming constant accrual of 16 per week, where $q=0.95$, $\underline{c}=0.05$, and $\overline{c}=0.95$.}
+	\centering
+	\begin{tabular}[t]{lrrrrrrrrr}
+	\toprule
+	$\theta_a^\star$ & $\theta_w^\star$ & \makecell{Decide\\superior} & \makecell{Stop\\early\\superior} & \makecell{No\\stop\\superior} & \makecell{Stop\\futile} & \makecell{Stop\\expect\\success} & \makecell{Superior\\following\\futile} & \makecell{Superior\\following\\exepct\\success} & \makecell{Expected\\sample\\size}\\
+	\midrule
+	0.10 & 0.05 & 0.99 & 0.97 & 0.02 & 0.01 & 0.97 & 0.61 & 1.00 & 1673\\
+	 & 0.06 & 0.97 & 0.84 & 0.12 & 0.03 & 0.84 & 0.34 & 0.99 & 1959\\
+	 & 0.07 & 0.85 & 0.57 & 0.27 & 0.08 & 0.59 & 0.14 & 0.95 & 2251\\
+	 & 0.08 & 0.55 & 0.28 & 0.28 & 0.21 & 0.31 & 0.05 & 0.86 & 2412\\
+	 & 0.09 & 0.22 & 0.09 & 0.12 & 0.44 & 0.13 & 0.01 & 0.68 & 2353\\
+	 & 0.10 & 0.05 & 0.02 & 0.03 & 0.69 & 0.04 & 0.00 & 0.47 & 2129\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\section*{Discussion}
+
+The motivations, context and procedures for implementing the OPTIMUM trial have been described in the protocol. 
+In this document, we have provided a detailed specification of the statistical analysis plan relating to the interim and final analyses. 
+We presented the results of Monte Carlo simulations used to explore trial operating characteristics of the trial which were used in trial planning.
+
+Publication of the study protocol and the present statistical analysis plan before knowledge of any results was done to enhance transparency.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -738,15 +830,18 @@ The scenarios explored are summarised in Table \ref{tab:scenarios}.
 
 \begin{backmatter}
 
-\section*{Acknowledgements}%% if any
-We acknowledge the...
+\section*{Acknowledgements}
 
-\section*{Funding}%% if any
+We acknowledge ...
+
+\section*{Funding}
+
 This is an investigator-initiated study supported by grants from the National Health and Medical Research Council of Australia (NHMRC) (GNT 1158722) and Telethon New Children's Hospital Research Fund 2012 (Round 1).
 These funding bodies had no role in the design and conduct of this trial, in the analyses of the data or in the decision to submit the results for publication.
 The University of Sydney is the trial sponsor, being the institution that assumes the overall responsibility for the conduct of the trial and the administration of the NHMRC grant.
 
-\section*{Abbreviations}%% if any
+\section*{Abbreviations}
+
 \textbf{aP:} acellular pertussis
 
 \textbf{CI:} confidence interval
@@ -757,7 +852,17 @@ The University of Sydney is the trial sponsor, being the institution that assume
 
 \textbf{DTwP:} diphtheria tetanus whole-cell pertussis 
 
+\textbf{FHA:} filamentous haemagglutinin
+
+\textbf{GMC:} geometric mean concentration
+
+\textbf{GMR:} geometric mean ratio
+
+\textbf{HiB:} \textit{Haemophilus influenzae} type b 
+
 \textbf{IA:} interim analysis/analyses
+
+\textbf{IQR}: inter-quartile range
 
 \textbf{ITT:} intention-to-treat
 
@@ -767,26 +872,38 @@ The University of Sydney is the trial sponsor, being the institution that assume
 
 \textbf{PP:} per-protocol
 
+\textbf{PRN:} pertactin
+
+\textbf{PRP:} polyribosyl-ribitol phosphate
+
+\textbf{PT:} pertussis toxin
+
 \textbf{SAP:} statistical analysis plan
 
 \textbf{SPT:} skin prick test
 
+\textbf{TT:} tetanus toxoid
+
 \textbf{wP:} whole-cell pertussis
 
 \section*{Availability of data and materials}%% if any
+
 The investigators will undertake to make patient-level data available for independent analysis subject to any requisite approval from the relevant ethics and governance committees.
 
 \section*{Ethics approval and consent to participate}%% if any
-Ethics approval has been granted by...
+
+Ethics approval has been granted by the Child and Adolescent Health Service Human Research Ethics Committee, Perth, Western Australia (RGS 00019)
 
 \section*{Competing interests}
+
 The authors declare that they have no competing interests.
 
 \section*{Authors' contributions}
+
 JAT was responsible for the design and draft of the SAP.
 
-\section*{Authors' information}%% if any
-Text for this section\ldots
+% \section*{Authors' information}%% if any
+% Text for this section\ldots
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
@@ -831,50 +948,8 @@ Text for this section\ldots
 %%
 %% Do not use \listoffigures as most will included as separate files
 
-\section*{Figures}
+% \section*{Figures}
 
-\begin{figure}[!ht] 	  	  	  
-	\caption{Example accrual assuming 16 enrolees per week on average.}
-	\label{fig:accrual-16}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under constant 16 per week accrual.}
-	\label{fig:decisions-16}
-\end{figure}
-
-\begin{figure}[!ht]
-\caption{Probability of the trial stopping at each stage for either expected success or futility, under constant 16 per week accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-16}
-\end{figure}
-
-
-\begin{figure}[!ht] 	  	  	  
-	\caption{Example accrual assuming 5 enrolees per week on average.}
-	\label{fig:accrual-5}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under constant 5 per week accrual.}
-	\label{fig:decisions-5}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of the trial stopping at each stage for either expected success or futility, under constant 5 per week accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-5}
-\end{figure}
-
-\begin{figure}[!ht] 	  	  	  
-	\caption{Example ramp-up accrual.}
-	\label{fig:accrual-ru}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of declaring superiority at the final analysis by decision thresholds and effect size under ramp-up accrual.}
-	\label{fig:decisions-ru}
-\end{figure}
-
-\begin{figure}[!ht]
-	\caption{Probability of the trial stopping at each stage for either expected success or futility, under ramp-up accrual, where \(q=0.95\), \(\underline{c}=0.05\) and \(\overline{c}=0.95\).}\label{fig:stop-ru}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -884,13 +959,7 @@ Text for this section\ldots
 
 %% Use of \listoftables is discouraged.
 %%
-\section*{Tables}
-
-
-
-
-
-
+% \section*{Tables}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -900,13 +969,10 @@ Text for this section\ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Additional Files}
-  \subsection*{Additional file 1 --- Sample additional file title}
-    Additional file descriptions text (including details of how to
-    view the file, if it is in a non-standard format or the file extension).  This might
-    refer to a multi-page table or a figure.
 
-  \subsection*{Additional file 2 --- Sample additional file title}
-    Additional file descriptions text.
+\subsection*{Additional file 1 --- Operating characteristcs for other accrual scenarios}
+
+This file includes simulation results for the remaining scenarios described in the main text.
 
 \end{backmatter}
 \end{document}
