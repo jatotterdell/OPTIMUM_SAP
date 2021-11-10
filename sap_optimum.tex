@@ -360,7 +360,7 @@ The participant may not enter the trial if any of the following apply:
 	\item For stage 1 (visit 2, 3 and 7 only), receipt of any vaccination with a licensed vaccine product, including seasonal influenza vaccination or meningococcal vaccination, within the preceding 14 days. In these situations, the study visit should be deferred until 14 days have elapsed.
 \end{itemize}
 
-\subsection*{Elimination Criteria During The Study}
+\subsection*{Exclusion from per-protocol population}
 
 The following criteria will be checked at each visit subsequent to the first visit.
 If any become applicable during the study, it will not require automatic withdrawal of the participants from the study, but may determine the participant's evaluability in the per-protocol (PP) analysis.
@@ -442,7 +442,7 @@ These are numbered below.
 		\item Hepatitis B surface antigen (HBsAg)
 		\item Diphtheria toxoid (DT)
 	\end{enumerate}
-	The seropositive thresholds for pertussis antigens are:
+	The seropositive thresholds\label{lab:sero-thresholds} for pertussis antigens are:
 	\begin{itemize}
 	    \item $\geq 5$ IU/mL for PT, FHA, and PRN
 	\end{itemize}
@@ -468,10 +468,7 @@ These are numbered below.
 
 \subsection*{Safety and tolerability}
 
-The protocol defines the collection of solicited systemic and local adverse events and information on the vaccination experience following immunisation with pertussis-containing vaccines.
-
-\begin{enumerate}
- \item Reactogencity: To assess the local and systemic adverse reactions (ARs) experienced by participants in each study group after administration of the pertussis containing vaccine doses from the day of vaccination (day 0) until 7 days later (day 6), solicited adverse events and intensity grading will be collected by diary cards for the 7 days after vaccination (for participants in stage 1 vaccinations at 2, 4, 6, and 18 months of age and the first 300 participants in stage 2 enrolled at TKI for vaccinations at 2 and 18 months of age). The following solicited adverse events (AEs) will be collected:
+To assess the local and systemic adverse reactions (ARs) experienced by participants in each study group after administration of the pertussis containing vaccine doses from the day of vaccination (day 0) until 7 days later (day 6), solicited adverse events and intensity grading will be collected by diary cards for the 7 days after vaccination (for participants in stage 1 vaccinations at 2, 4, 6, and 18 months of age and the first 300 participants in stage 2 enrolled at TKI for vaccinations at 2 and 18 months of age). The following solicited adverse events (AEs) will be collected:
  \begin{itemize}
      \item Axillary temperature (fever $\geq$ 38 $^\circ$C)
      \item Irritability
@@ -484,13 +481,14 @@ The protocol defines the collection of solicited systemic and local adverse even
  \end{itemize}
  The definition and intensity grading for fever, diarrhoea and  local  reactions  (except  for  immunisation  site  pain)  follows  the  Brighton  Collaboration  guidelines \cite{Marcy2004, Gidudu2011, Gidudu2008, Kohl2007a, Kohl2007b}. 
  For other solicited adverse events, intensity grading scales based on impact on daily activities are used  (grade 0 or absent; grade 1 if easily tolerated; grade 2, sufficiently discomforting to interfere with normal everyday activities and grade 3, if prevents normal everyday activities or requires significant medical intervention).
- \item Parental satisfaction with vaccination: to assess parental dissatisfaction with vaccination in each group after each scheduled vaccine encounter, the following will be collected:
+
+ \subsection*{Vaccine Satisfaction}
+
+To assess parental dissatisfaction with vaccination in each group after each scheduled vaccine encounter, the following will be collected:
  \begin{enumerate}
      \item (Stage 1 infants) - Primary caregiver reported satisfaction with the vaccination experience on a 5-point Likert scale (from very satisfactory to very unsatisfactory) on day 7 after vaccination at 2, 4, 6, and 18 months of age
      \item (Stage 2 infants, first 300 enrolments at TKI) - Primary caregiver reported satisfaction with the vaccination experience on a 5-point Likert scale (from very satisfactory to very unsatisfactory) on day 7 after vaccination at 2, and 18 months of age.
  \end{enumerate}
-\end{enumerate}
-
 
 \section*{Randomisation}
 
@@ -527,7 +525,8 @@ We estimated a 69\% probability of stopping early for futility if the null were 
 All subjects who were invited to participate in this trial will be accounted for, and a CONSORT flow chart will be prepared for both the stage 1 and stage 2 participants.
 Reasons for early withdrawal will be listed for all participants who prematurely withdraw from the study.
 The number of participants who are screened but not randomised will be presented and the reasons for their non-participation will be listed (where available).
-The number of participants who are randomised, the number who fulfill eligibility criteria, and the number who are randomised by study centre, will be summarised.
+The number of participants who are randomised, the number who fulfil eligibility criteria, and the number who satisfy elimination criteria at the specified time-points in the study will be summarised.
+The number of participants randomised by study centre and the rate of accrual over time will also be reported.
 
 The trial participants will be summarised according to baseline variables.
 The data for each baseline variable will be presented descriptively.
@@ -599,7 +598,7 @@ The planned analysis populations are defined as in Table \ref{tab:analysis-sets}
 		Per-protocol (PP) & All randomised participants who received as planned the vaccine strategy to which they were randomised, and who completed the whole study period according to the protocol (satisfied inclusion and exclusion criteria, and visits as scheduled).
 		\\
 		Stage 1 assays (ITT) & All participants in the ITT set who were enrolled under stage 1 protocol at the Perth Children's Hospital (PCH)/Telethon Kids Institute (TKI). \\
-		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at PCH/TKI site and who met none of the stage 1 elimination criteria and who did not receive any contraindicated vaccines or medications for stage 1.\\
+		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at PCH/TKI site and who met none of the stage 1 per-protocol exclusion criteria and who did not receive any contraindicated vaccines or medications for stage 1.\\
 		Stage 1+2 assays (ITT) & All participants in the ITT  who were enrolled under stage 1 protocol or under the stage 2 protocol at PCH/TKI who consented for the blood samples. \\
 		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the inclusion of the additional participants enrolled under the stage 2 protocol at PCH/TKI who consented for the blood samples and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
 		\hline
@@ -611,7 +610,9 @@ The planned analysis populations are defined as in Table \ref{tab:analysis-sets}
 
 Descriptive counts and proportions of the primary outcome will be tabulated by treatment group, including the number of inconclusive results.
 
-Inferences for the primary outcome will be based on Bayesian models. Interest lies in the measure of effect of assignment to the study vaccine on the primary endpoint relative to the comparator vaccine, denoted by \(\delta\).
+Inferences for the primary outcome will be based on Bayesian models.
+Each model will be inferred separately for the ITT and PP analysis sets.
+Interest lies in the measure of effect of assignment to the study vaccine on the primary endpoint relative to the comparator vaccine, denoted by \(\delta\).
 Depending on the model, this might represent the difference in proportions meeting the primary outcome, or some transformation of these proportions (log odds-ratio).
 In either case, the primary statistical hypotheses are:
 $$
@@ -667,8 +668,12 @@ Interim analyses begin after 200 subjects have complete primary outcome data.
 Subsequent interim analyses will occur after every additional 200 subjects with complete primary outcome data until either a stopping rule is met, or enrolment completed.
 Once a decision to stop has been made, or enrolment has reached the maximum sample size, enrolment will cease and all participants will be followed to study completion.
 
+Due to the timing of the primary outcome, the number of interim analyses is conditional on enrolment rates.
+Under the assumed accrual rate (Table \ref{tab:scenarios}), approximately 10 interim analyses are expected.
+
+
 The process for interim decisions is as follows.
-Let $\mathbb P(\delta < 0|D_k)$ denote the posterior probability of superiority under the specified model given data up to interim $k=1,2,...,K$ where complete data from $n_k$ participants are available.
+Let $\mathbb P(\delta < 0|D_k)$ denote the posterior probability of superiority under the specified model conditional on data, $D_k$, at interim $k=1,...,K$.
 We specify a prediction model, $f(\tilde D_k|D_k)$ for future outcome data $\tilde D_k$ that uses the data observed so far, marginalised over any uncertainty in the prediction model parameters.
 Using predictions of the primary outcome for subjects enrolled who are yet to complete follow-up, as well as subjects yet to be enrolled, the stopping decision is based on the predicted outcome of the trial (in terms of the decision rule used at the final analysis) if enrolment were stopped now (with follow-up completed on enrolled participants), or continued to the maximum sample size, given what has been observed up to interim $k$.
 
@@ -686,7 +691,7 @@ This is two independent Beta-Binomial distributions conditional on the observed 
 
 Two stopping rules are specified: 1) expected success and 2) futility.
 At each planned interim analysis $k=1,2,...,K$, let $n_i^k$ denote the number of participants in arm $i$ who have reached the primary endpoint by the time of interim $k$.
-Let $y_i^k$ denote the number of participants in arm $i$ out of $n_i^k$ who had a response and $D_k$ denote all the available data.
+Let $y_i^k$ denote the number of participants in arm $i$ out of $n_i^k$ who met the primary outcome criteria, and $D_k$ denote the available data.
 In addition to the participants with observed outcomes at interim $k$, there are $m_i^k$ participants enrolled in arm $i$, of which some unknown $\tilde w_i^k$ will have a future response. There are also $l_i^k$ participants who could still be enrolled into arm $i$ (in 1:1 allocation up to maximum sample size) of which some unknown $\tilde z_i^k$ will have a future response.
 
 Using the prediction model and primary analysis model, the following values are calculated
@@ -705,7 +710,83 @@ d(D_k)=\begin{cases}
 \text{continue to analysis }k+1 &\text{otherwise}
 \end{cases} \quad k=1,...,K
 $$
-where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ for all $k$ which were selected based on simulations.
+where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ for all $k$ which were selected based on simulations (see Operating Characteristics).
+
+\subsection*{Analysis of Secondary Outcomes}
+
+\subsubsection*{Clinical and Mechanistic}
+
+Based on the intention-to-treat (ITT) and per-protocol (PP) analysis sets, the proportion of participants with each clinical and mechanistic outcome response will be reported.
+Unadjusted posterior summaries for the difference in proportions between the study vaccine and comparator will be calculated using Beta-Binomial models as for the primary outcome.
+Adjusted analyses will use logistic regression models where posterior summaries of the adjusted odds ratio associated with receiving the study vaccine will be reported along with any other model parameters.
+These models will adjust for the same covariates as in the adjusted model for the primary outcome and use the same priors.
+
+\subsubsection*{Laboratory - stage 1 atopic immunophenotypic response}
+
+The sensitivity of the assay for total IgE and antigen-specific IgE concentrations will be reported. 
+Results outside the limits of detection will be reported as above or below the detection limit. 
+For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed from the unit scale and concentrations outside detection limits will be treated as censored.
+
+For each outcome, we will report by treatment group and visit for the stage 1 assay analysis sets the following descriptive summaries:
+\begin{itemize}
+	\item the median, IQR, and range of concentrations
+	\item the proportion of missing concentrations
+	\item the proportion of concentrations above/below detection limits of the assay
+	\item the proportion of concentrations exceeding the positive response threshold (see page \pageref{lab:sero-thresholds})
+	\item Kaplan-Meier plots of concentrations
+\end{itemize}
+
+Inferences for geometric mean concentrations (GMC) and geometric mean ratios (GMR) between study groups will assume censored normal regression models for log-concentrations. 
+Univariate models will be fit for each visit with treatment specific means, and a multivariate model for all visits with unstructured covariance matrices and visit by treatment specific means.
+If issues arise with the covariance structure, a simpler covariance model will be assumed, such as heterogeneous compound symmetry.
+Priors on mean parameters will be normal with mean 0 and standard deviation 10. 
+An LKJ(1) prior is specified on the correlation matrix, and half-Cauchy with location 0 and scale 10 on the marginal standard deviation parameters.
+If the assumptions of the censored regression model are inappropriate then two-part models may be considered to separate modelling of detection and concentration at each visit.
+
+Inferences for relative proportions exceeding positive response threshold by study group will assume logistic regression models with a fixed term for treatment group, visit, and their interaction, and random intercepts for participants.
+
+\subsubsection*{Laboratory - stage 1 and 2 vaccine response}
+
+The sensitivity of each assay will be reported. 
+Results outside the limits of detection will be reported as above or below the detection limit. 
+For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored.
+
+For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 (PT only) assay analysis sets:
+\begin{itemize}
+	\item the median, IQR, and range of concentrations
+	\item the proportion of missing concentrations
+	\item the proportion of concentrations above/below detection limits of the assay
+	\item the proportion of concentrations exceeding the seroprotective/seropositivity thresholds (see page \pageref{lab:sero-thresholds})
+	\item the proportion of participants with a 4-fold or greater increase in their concentration from 18 to 19 months 
+	\item Kaplan-Meier plots of concentrations
+\end{itemize}
+
+Inferences for GMC, GMR, and proportions will use the same modelling approach as for the atopic immunophenotypic response outcomes.
+
+Non-inferiority of the wP vaccine strategy compared to the standard aP vaccine strategy with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMR.
+That is, if the GMR for a particular antigen and visit is defined as
+$$
+\text{GMR} = \frac{\text{GMC}_\text{wP}}{\text{GMC}_\text{aP}}
+$$ 
+then non-inferiority will be evaluated according to
+$$
+\mathbb P\left(\text{GMR}\geq \frac{2}{3}\Big\vert \text{data}\right).
+$$
+
+\subsection*{Safety and Tolerability Outcomes}
+
+The number and proportions of infants in each study group with each type of solicited AE and their intensity grading will be summarised for each day following vaccination (day 0 to 6) for each vaccine occasion (2, 4, 6, and 18 months in stage 1; 2 and 18 months in stage 2).
+The number and proportion of infants in each study group with each type of solicited AE, and at least one type of solicited AE for each vaccine occasion will be reported.
+
+\subsection*{Vaccine Satisfaction}
+
+The responses for vaccination satisfaction of primary caregivers for infants in each study group on the 5-point Likert scale on day 7 after each vaccine occasion will be summarised by counts and proportions.
+The number of vaccination experiences reported as either unsatisfactory or very unsatisfactory on the Likert scale will be reported by study group as counts and proportions.
+
+\subsection*{Subgroup Analyses}
+
+No pre-specified subgroup analyses will be undertaken; however, some subgroup effects may be investigated as part of post-hoc analyses.
+Any such subgroup analyses will be noted as being post-hoc.
 
 
 
@@ -793,6 +874,11 @@ Secondary analyses using multiple imputation for missing responses and covariate
 Sensitivity of results to the specified priors will be investigated by estimating parameters under different prior configurations than those used in the primary analyses.
 In particular, the hyperparameter for prior variances will be varied to assess how conclusions may change under varying strength of the prior.
 
+\subsection*{Software}
+
+All data cleaning, summaries, as well as exploratory and pre-specified analyses will be undertaken using R \cite{rlang}.
+For models where MCMC sampling is required we will use Stan \cite{stanlang}.
+
 \subsection*{Reporting}
 
 Results for the stage 1 atopic immunophenotypic response, vaccine response, and safety and tolerability outcomes will be reported by study group once complete follow-up has been obtained for the 150 participants in stage 1 up to their 7-month visit. This will not include SAEs or unsolicited AEs.
@@ -800,8 +886,12 @@ Results for the stage 1 atopic immunophenotypic response, vaccine response, and 
 \section*{Operating Characteristics}
 
 The operating characteristics of the OPTIMUM trial were estimated using Monte Carlo methods assuming 
-various scenarios for the data generating process. 
+various scenarios for the data generating process.
+
 The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
+For example, based on the final row of Figure \ref{fig:superiority_16}, tresholds consistent with type I error of approximately 0.05 were identified.
+These threshold combinations were then assessed for power and expected sample size, noting that many combination options result in similar opearting characteristics.
+Due to the common use of 0.95 as a one-sided threshold, the value $q=0.95$ was selected.
 
 \subsection*{Scenarios}
 
@@ -843,7 +933,7 @@ Expected success thresholds were fixed across all interim analyses and set to $\
 
 \subsection*{Results}
 
-Simulation results from all scenario combinations were based on 10,000 replications performed using R \cite{Rlang}.
+Simulation results from all scenario combinations were based on 10,000 replications performed using R \cite{rlang}.
 Results are presented here only for the 16 per week accrual scenario; the other scenarios are available in a supplemental file (Additional file 1).
 
 Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present the probability of deciding superiority at the final analysis (power) and expected sample size respectively over the grid of effect sizes and decision thresholds assuming constant accrual of 16 participants per week.
@@ -851,25 +941,25 @@ Figures \ref{fig:stop_expect_success_16} and \ref{fig:stop_futility_16} present 
 
 \begin{figure}[!ht]
 	\caption{Probability of deciding superiority at the final analysis by decision thresholds and effect size assuming constant 16 per week accrual.}
-	\includegraphics{figures/superiority_16.pdf}
+	\includegraphics{superiority_16.pdf}
 	\label{fig:superiority_16}
 \end{figure}
 
 \begin{figure}[!ht]
 	\caption{Expected sample size by decision thresholds and effect size assuming constant 16 per week accrual.}
-	\includegraphics{figures/expected_ss_16.pdf}
+	\includegraphics{expected_ss_16.pdf}
 	\label{fig:expected_ss_16}
 \end{figure}
 
 \begin{figure}[!ht]
 	\caption{Marginal stopping probability for expected success by stage, effect size, and thresholds assuming constant 16 per week accrual and futility bound $\underline{c}=0.05$.}
-	\includegraphics{figures/stop_expect_success_16.pdf}
+	\includegraphics{stop_expect_success_16.pdf}
 	\label{fig:stop_expect_success_16}
 \end{figure}
 
 \begin{figure}[!ht]
 	\caption{Marginal stopping probability for futility by stage, effect size, and thresholds assuming constant 16 per week accrual and expected success bound $\overline{c}=0.95$.}
-	\includegraphics{figures/stop_futility_16.pdf}
+	\includegraphics{stop_futility_16.pdf}
 	\label{fig:stop_futility_16}
 \end{figure}
 
