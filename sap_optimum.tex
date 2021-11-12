@@ -49,7 +49,7 @@
 \usepackage{amsthm,amsmath,amsfonts}
 \RequirePackage[numbers]{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
-%\RequirePackage{hyperref}
+\RequirePackage{hyperref}
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
@@ -300,6 +300,9 @@ The OPTIMUM trial is a two-armed, prospective, multi-site double-blinded, adapti
 The trial uses a Bayesian group-sequential design with pre-specified stopping rules informed by predictive probabilities of trial outcomes given the data available at interim analyses.
 
 The protocol defines two stages of the trial.
+Stage 1 was designed to obtain detailed solicited adverse event data following each primary pertussis vaccine dose, and post-priming immune response data for the first 150 infants only. 
+Stage 2 was designed as a simpler protocol with less intensive follow-up and fewer visits scheduled.
+
 During stage one, 150 participants were enrolled at Perth Children's Hospital (PCH), Western Australia between March 2018 and January 2020.
 Stage 2 will expand the trial to include sites in Sydney and Melbourne randomising up to 3,000 participants including the 150 from stage 1.
 The stage 1 and stage 2 schedules of assessment are available in the previously published protocol \cite{perez2020}.
@@ -498,8 +501,9 @@ The randomisation codes are password-protected and held by the trial statisticia
 
 \section*{Blinding}
 
-The allocation sequence is concealed from all blinded research staff in a non-transparent envelope until completion of the study.
-An unblinded pharmacist or research nurse obtains the next contiguous allocation and prepares the study or comparator vaccine into a clear 1 ml ready administer syringe, labelled with the study participant's number and their identifiers.
+An electronic copy of the randomisation list is distributed by the study statistician to the unblinded pharmacist for printing and concealment.
+The randomisation list is concealed from all blinded research staff in a non-transparent envelope until completion of the study.
+An unblinded pharmacist or research nurse obtains the next contiguous allocation from the concealed list (i.e. the lowest available randomisation number) and prepares the study or comparator vaccine into a clear 1 ml ready administer syringe, labelled with the study participant's number and their identifiers.
 The syringes are covered to prevent unblinding.
 At enrolment, vaccines may be administered by either a blinded, or an unblinded nurse.
 If unblinded, this nurse has no further involvement in the follow-up of the participant.
@@ -514,6 +518,7 @@ Code breaks will be authorised by the coordinating principal investigator and wi
 
 A maximum sample size of 3,000 participants is planned; 150 participants in stage 1 and up to 2,850 in stage 2.
 In accordance with trial simulations of the above design, we estimated the trial would have 85\% power to detect a reduction in IgE-mediated food allergy by 12 months of age from 10\% to 7\% while controlling the probability of a type I error at approximately 5\%.
+This effect size was selected on the basis of consultation with clinical stakeholders.  
 
 The sample size for this study is adaptive, therefore the actual trial sample size may be less than 3,000 participants. Based on simulations undertaken for the trial design, the actual sample size is likely to be at least 1,000 participants given the expected accrual rates and timing of the first interim analysis.
 We estimated a 69\% probability of stopping early for futility if the null were true, and in the alternative scenario (reduction from 10\% to 7\% in the primary outcome), we estimated 59\% probability of stopping early for expected success.
@@ -763,7 +768,7 @@ For each outcome, we will report by treatment group and visit for the stage 1 an
 
 Inferences for GMC, GMR, and proportions will use the same modelling approach as for the atopic immunophenotypic response outcomes.
 
-Non-inferiority of the wP vaccine strategy compared to the standard aP vaccine strategy with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMR.
+Non-inferiority of the wP vaccine strategy compared to the standard aP vaccine strategy with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMR \cite{who}.
 That is, if the GMR for a particular antigen and visit is defined as
 $$
 \text{GMR} = \frac{\text{GMC}_\text{wP}}{\text{GMC}_\text{aP}}
@@ -863,6 +868,7 @@ Expected success thresholds were fixed across all interim analyses and set to $\
 
 Simulation results from all scenario combinations were based on 10,000 replications performed using R \cite{rlang}.
 Results are presented here only for the 16 per week accrual scenario; the other scenarios are available in a supplemental file (Additional file 1).
+The R functions and scripts used to simulate the trials and summarise the results are available at \url{https://github.com/jatotterdell/OPTIMUMsims}.
 
 Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present the probability of deciding superiority at the final analysis (power) and expected sample size respectively over the grid of effect sizes and decision thresholds assuming constant accrual of 16 participants per week.
 Figures \ref{fig:stop_expect_success_16} and \ref{fig:stop_futility_16} present marginal stopping probabilities for expected success and futility respectively.
