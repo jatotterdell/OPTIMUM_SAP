@@ -221,8 +221,7 @@ Secondary outcomes include:
 
 \parttitle{Results} %if any
 Operating characteristics of trial decision rules were evaulated by trial simulation.
-The selected decision rules for trial success and futility approximately maintained type I error of 5\% and achieved power 0.85 
-for a reduction in the primary outcome from 10\% in the control group to 7\% in the intervention group.
+The selected decision rules for success and futility approximately maintained type I error of 5\% and achieved power 0.85 for a reduction in the primary outcome from 10\% in the control group to 7\% in the intervention group.
 
 \parttitle{Discussion} %if any
 A detailed, prospective statistical analysis plan (SAP) is presented for this Bayesian adaptive design. 
@@ -440,12 +439,15 @@ These are numbered below.
 		\item IgE concentration to whole egg antigen.
 	\end{enumerate}
 	Assays will be in kU/L per sample.
-	IgE levels $\geq$ 0.35 kU/L are considered positive.
+	IgE levels $\geq$ 0.10 kU/L are considered positive.
+	The total IgE low-range assay can detect concentrations between 0.1 to 100 kU/L.
+	The total IgE high-range assay has range 2 to 5,000 kU/L.
+	The specific IgE are reported in the range 0.00 to 100.00 kU/L with results above 100.00 kU/L reported as above this limit.
 \end{enumerate}
 
 \begin{enumerate}[resume]
 	\item Compare vaccine antibody responses in each study group:
-	vaccine antigen-specific IgG concentrations/titres will be measured at approximately ages 6, 7, 18, and 19 months using a multiplex fluorescent bead assay \cite{van2008development}, for the following during stage 1 only (150 participants).
+	vaccine antigen-specific IgG concentrations/titres will be measured at approximately ages 6, 7, 18, and 19 months using a multiplex fluorescent bead assay \cite{van2008development, McAlister2021}, for the following during stage 1 only (150 participants).
 	\begin{enumerate}
 		\item Pertussis toxin (PT)
 		\item Filamentous haemagglutinin (FHA)
@@ -469,6 +471,8 @@ These are numbered below.
 	\end{itemize}
 	For each antigen, we will assess the ratio of the geometric mean titres (GMT) or concentrations (GMC) across study groups at each time point, the fold-rise in concentration from 18 (immediately before boosting with a dose of DTaP with inactivated polio vaccine) to 19 months (21-35 days after vaccination), and proportions of seroprotection or seropositivity.
 	A 4-fold rise or greater will be considered indicative of seroconversion.
+	For pneumococcal IgG responses the lower limit of quantification ranges from 0.3 ng/mL to 1.9 ng/mL \cite{menon2012children}.
+	For the other antigens-specific IgG, the lower limits of quantification range from 0.01 mIU/mL (DT) to 0.43 mIU/mL (FHA) \cite{McAlister2021}.
 \end{enumerate}
 
 \subsubsection*{Stage 2 vaccine response}
@@ -740,14 +744,14 @@ These models will adjust for the same covariates as in the adjusted model for th
 \subsubsection*{Laboratory - stage 1 atopic immunophenotypic response}
 
 The sensitivity of the assay for total IgE and antigen-specific IgE concentrations will be reported. 
-Results outside the limits of detection will be reported as above or below the detection limit. 
+Results outside the limits of detection will be reported as below or above the limit of quantification. 
 For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed from the unit scale and concentrations outside detection limits will be treated as censored.
 
 For each outcome, we will report by treatment group and visit for the stage 1 assay analysis sets the following descriptive summaries:
 \begin{itemize}
 	\item the median, IQR, and range of concentrations
 	\item the proportion of missing concentrations
-	\item the proportion of concentrations above/below detection limits of the assay
+	\item the proportion of concentrations below or above limits of quantification
 	\item the proportion of concentrations exceeding the positive response threshold (see page \pageref{lab:sero-thresholds})
 	\item Kaplan-Meier plots of concentrations
 \end{itemize}
@@ -764,14 +768,14 @@ Inferences for relative proportions exceeding positive response threshold by stu
 \subsubsection*{Laboratory - stage 1 and 2 vaccine response}
 
 The sensitivity of each assay will be reported. 
-Results outside the limits of detection will be reported as above or below the detection limit. 
+Results outside the limits of detection will be reported as below or above the limit of quantification.  
 For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored.
 
 For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 (PT only) assay analysis sets:
 \begin{itemize}
 	\item the median, IQR, and range of concentrations
 	\item the proportion of missing concentrations
-	\item the proportion of concentrations above/below detection limits of the assay
+	\item the proportion of concentrations below the limit of quantification
 	\item the proportion of concentrations exceeding the seroprotective/seropositivity thresholds (see page \pageref{lab:sero-thresholds})
 	\item the proportion of participants with a 4-fold or greater increase in their concentration from 18 to 19 months 
 	\item Kaplan-Meier plots of concentrations
