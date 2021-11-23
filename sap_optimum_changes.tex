@@ -1,4 +1,7 @@
 %% BioMed_Central_Tex_Template_v1.06
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL version1/sap_optimum.tex   Thu Sep  9 10:42:33 2021
+%DIF ADD sap_optimum.tex            Wed Nov 24 09:13:32 2021
 %%                                      %
 %  bmc_article.tex            ver: 1.06 %
 %                                       %
@@ -49,7 +52,11 @@
 \usepackage{amsthm,amsmath,amsfonts}
 \RequirePackage[numbers]{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
-\RequirePackage{hyperref}
+%DIF 52c52
+%DIF < %\RequirePackage{hyperref}
+%DIF -------
+\RequirePackage{hyperref} %DIF > 
+%DIF -------
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
@@ -82,6 +89,88 @@
 \endlocaldefs
 
 %%% Begin ...
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
 \begin{document}
 
 %%% Start of article front matter
@@ -219,11 +308,12 @@ Secondary outcomes include:
 (2) geometric mean concentration in pertussis toxin-specific IgG before and 21 to 35 days after a booster dose of aP at 18 months of age; 
 (3) sensitisation to at least one allergen by 12 months of age.
 
-\parttitle{Results} %if any
-Operating characteristics of trial decision rules were evaluated by trial simulation.
+\DIFaddbegin \parttitle{Results} %DIF > if any
+\DIFadd{Operating characteristics of trial decision rules were evaluated by trial simulation.
 The selected rules for success and futility approximately maintain type I error of 0.05 and achieved power 0.85 for a reduction in the primary outcome from 10\% in the control group to 7\% in the intervention group.
+}
 
-\parttitle{Discussion} %if any
+\DIFaddend \parttitle{Discussion} %if any
 A detailed, prospective statistical analysis plan (SAP) is presented for this Bayesian adaptive design. 
 The plan was written by the trial statistician and details the study design, pre-specified adaptive elements, decision thresholds, statistical methods and the simulations used to evaluate the operating characteristics of the trial. 
 Application of this SAP will minimise bias and supports transparent and reproducible research.
@@ -295,9 +385,12 @@ Australia \& New Zealand Clinical Trials Registry (ACTRN12617000065392).
 
 Combination vaccines containing whole-cell pertussis (wP) antigens were phased out from the Australian National Immunisation Program (NIP) between 1997 and 1999 and replaced by vaccines containing less reactogenic acellular pertussis (aP) antigens.
 In a case-control study of Australian children born during the transition period, those with allergist diagnosed IgE-mediated food allergy were less likely to have received whole-cell vaccine in early infancy than matched population controls [odds ratio: 0.77, 95\% confidence interval (0.62, 0.95)] \cite{estcourt2020whole}.
-The notions of mechanistic plausibility that support these results are based on the Th$_1$/Th$_{17}$ immune-modulating properties of some components of \textit{Bordetella pertussis} within wP formulations, which could promote the development of oral tolerance in children predisposed to maintain Th$_2$- biased responses into later infancy \cite{perez2020}.
+\DIFaddbegin \DIFadd{The notions of mechanistic plausibility that support these results are based on the Th$_1$/Th$_{17}$ immune-modulating properties of some components of }\textit{\DIFadd{Bordetella pertussis}} \DIFadd{within wP formulations, which could promote the development of oral tolerance in children predisposed to maintain Th$_2$- biased responses into later infancy \mbox{%DIFAUXCMD
+\cite{perez2020}}\hspace{0pt}%DIFAUXCMD
+.
+}
 
-We hypothesise that a single dose of whole-cell vaccine in early infancy is protective against IgE-mediated food allergy in early childhood.
+\DIFaddend We hypothesise that a single dose of whole-cell vaccine in early infancy is protective against IgE-mediated food allergy in early childhood.
 
 This statistical analysis plan (SAP) provides \textit{a priori} specification of the decision-making rules and the statistical methods to be used in a prospective clinical trial. 
 The SAP was prepared after data collection had commenced, but prior to any unblinded data analyses. 
@@ -310,10 +403,11 @@ The OPTIMUM trial is a two-armed, prospective, multi-site double-blinded, adapti
 The trial uses a Bayesian group-sequential design with pre-specified stopping rules informed by predictive probabilities of trial outcomes given the data available at interim analyses.
 
 The protocol defines two stages of the trial.
-Stage 1 was designed to obtain detailed solicited adverse event data following each primary pertussis vaccine dose, and post-priming immune response data for the first 150 infants only. 
+\DIFaddbegin \DIFadd{Stage 1 was designed to obtain detailed solicited adverse event data following each primary pertussis vaccine dose, and post-priming immune response data for the first 150 infants only. 
 Stage 2 was designed as a simpler protocol with less intensive follow-up and fewer visits scheduled.
+}
 
-During stage one, 150 participants were enrolled at Perth Children's Hospital (PCH), Western Australia between March 2018 and January 2020.
+\DIFaddend During stage one, 150 participants were enrolled at Perth Children's Hospital (PCH), Western Australia between March 2018 and January 2020.
 Stage 2 will expand the trial to include sites in Sydney and Melbourne randomising up to 3,000 participants including the 150 from stage 1.
 The stage 1 and stage 2 schedules of assessment are available in the previously published protocol \cite{perez2020}.
 
@@ -373,7 +467,7 @@ The participant may not enter the trial if any of the following apply:
 	\item For stage 1 (visit 2, 3 and 7 only), receipt of any vaccination with a licensed vaccine product, including seasonal influenza vaccination or meningococcal vaccination, within the preceding 14 days. In these situations, the study visit should be deferred until 14 days have elapsed.
 \end{itemize}
 
-\subsection*{Exclusion from per-protocol population}
+\subsection*{\DIFdelbegin \DIFdel{Elimination Criteria During The Study}\DIFdelend \DIFaddbegin \DIFadd{Exclusion from per-protocol population}\DIFaddend }
 
 The following criteria will be checked at each visit subsequent to the first visit.
 If any become applicable during the study, it will not require automatic withdrawal of the participants from the study, but may determine the participant's evaluability in the per-protocol (PP) analysis.
@@ -383,7 +477,7 @@ The data would, however, continue to be included in the intention-to-treat (ITT)
 	\item Use, or planned use, of any investigational or non-registered product (drug or vaccine) other than the study vaccine(s) during the study period, until 1 month after the final study visit (i.e.~at approximately 20 months of age).
 	\item For Stage 1 only: Chronic administration (defined as more than 14 days) of immunosuppressants or other immune-modifying drugs during the study period (for corticosteroids, this will mean prednisone $\geq$ 0.5 mg/kg/day, or equivalent. Inhaled and topical steroids are allowed).
 	\item For Stage 1 only:
-	
+
 	\begin{itemize}
 		\item Administration of a vaccine not foreseen by the study protocol within 14 days after any scheduled vaccine dose.
 		\item Administration of immunoglobulins and/or any blood products during the study period.
@@ -439,15 +533,19 @@ These are numbered below.
 		\item IgE concentration to whole egg antigen.
 	\end{enumerate}
 	Assays will be in kU/L per sample.
-	IgE levels $\geq$ 0.10 kU/L are considered positive.
-	The total IgE low-range assay can detect concentrations between 0.1 to 100 kU/L.
+	IgE levels $\geq$ \DIFdelbegin \DIFdel{0.35 }\DIFdelend \DIFaddbegin \DIFadd{0.10 }\DIFaddend kU/L are considered positive.
+	\DIFaddbegin \DIFadd{The total IgE low-range assay can detect concentrations between 0.1 to 100 kU/L.
 	The total IgE high-range assay has range 2 to 5,000 kU/L.
 	The specific IgE are reported in the range 0.00 to 100.00 kU/L with results above 100.00 kU/L reported as above this limit.
-\end{enumerate}
+}\DIFaddend \end{enumerate}
 
 \begin{enumerate}[resume]
 	\item Compare vaccine antibody responses in each study group:
-	vaccine antigen-specific IgG concentrations/titres will be measured at approximately ages 6, 7, 18, and 19 months using a multiplex fluorescent bead assay \cite{van2008development, McAlister2021}, for the following during stage 1 only (150 participants).
+	vaccine antigen-specific IgG concentrations/titres will be measured at approximately ages 6, 7, 18, and 19 months using a multiplex fluorescent bead assay \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{van2008development}}\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{van2008development, McAlister2021}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend , for the following during stage 1 only (150 participants).
 	\begin{enumerate}
 		\item Pertussis toxin (PT)
 		\item Filamentous haemagglutinin (FHA)
@@ -458,7 +556,7 @@ These are numbered below.
 		\item Hepatitis B surface antigen (HBsAg)
 		\item Diphtheria toxoid (DT)
 	\end{enumerate}
-	The seropositive thresholds\label{lab:sero-thresholds} for pertussis antigens are:
+	The seropositive thresholds\DIFaddbegin \label{lab:sero-thresholds} \DIFaddend for pertussis antigens are:
 	\begin{itemize}
 	    \item $\geq 5$ IU/mL for PT, FHA, and PRN
 	\end{itemize}
@@ -471,9 +569,13 @@ These are numbered below.
 	\end{itemize}
 	For each antigen, we will assess the ratio of the geometric mean titres (GMT) or concentrations (GMC) across study groups at each time point, the fold-rise in concentration from 18 (immediately before boosting with a dose of DTaP with inactivated polio vaccine) to 19 months (21-35 days after vaccination), and proportions of seroprotection or seropositivity.
 	A 4-fold rise or greater will be considered indicative of seroconversion.
-	For pneumococcal IgG responses the lower limit of quantification ranges from 0.3 ng/mL to 1.9 ng/mL \cite{menon2012children}.
-	For the other antigens-specific IgG, the lower limits of quantification range from 0.01 mIU/mL (DT) to 0.43 mIU/mL (FHA) \cite{McAlister2021}.
-\end{enumerate}
+	\DIFaddbegin \DIFadd{For pneumococcal IgG responses the lower limit of quantification ranges from 0.3 ng/mL to 1.9 ng/mL \mbox{%DIFAUXCMD
+\cite{menon2012children}}\hspace{0pt}%DIFAUXCMD
+.
+	For the other antigens-specific IgG, the lower limits of quantification range from 0.01 mIU/mL (DT) to 0.43 mIU/mL (FHA) \mbox{%DIFAUXCMD
+\cite{McAlister2021}}\hspace{0pt}%DIFAUXCMD
+.
+}\DIFaddend \end{enumerate}
 
 \subsubsection*{Stage 2 vaccine response}
 
@@ -486,7 +588,12 @@ These are numbered below.
 
 \subsection*{Safety and tolerability}
 
-To assess the local and systemic adverse reactions (ARs) experienced by participants in each study group after administration of the pertussis containing vaccine doses from the day of vaccination (day 0) until 7 days later (day 6), solicited adverse events and intensity grading will be collected by diary cards for the 7 days after vaccination (for participants in stage 1 vaccinations at 2, 4, 6, and 18 months of age and the first 300 participants in stage 2 enrolled at TKI for vaccinations at 2 and 18 months of age). The following solicited adverse events (AEs) will be collected:
+\DIFdelbegin \DIFdel{The protocol defines the collection of solicited systemic and local adverse events and information on the vaccination experience following immunisation with pertussis-containing vaccines.
+}%DIFDELCMD < 
+
+%DIFDELCMD < \begin{enumerate}
+%DIFDELCMD <  \item %%%
+\DIFdel{Reactogencity: }\DIFdelend To assess the local and systemic adverse reactions (ARs) experienced by participants in each study group after administration of the pertussis containing vaccine doses from the day of vaccination (day 0) until 7 days later (day 6), solicited adverse events and intensity grading will be collected by diary cards for the 7 days after vaccination (for participants in stage 1 vaccinations at 2, 4, 6, and 18 months of age and the first 300 participants in stage 2 enrolled at TKI for vaccinations at 2 and 18 months of age). The following solicited adverse events (AEs) will be collected:
  \begin{itemize}
      \item Axillary temperature (fever $\geq$ 38 $^\circ$C)
      \item Irritability
@@ -499,14 +606,19 @@ To assess the local and systemic adverse reactions (ARs) experienced by particip
  \end{itemize}
  The definition and intensity grading for fever, diarrhoea and  local  reactions  (except  for  immunisation  site  pain)  follows  the  Brighton  Collaboration  guidelines \cite{Marcy2004, Gidudu2011, Gidudu2008, Kohl2007a, Kohl2007b}. 
  For other solicited adverse events, intensity grading scales based on impact on daily activities are used  (grade 0 or absent; grade 1 if easily tolerated; grade 2, sufficiently discomforting to interfere with normal everyday activities and grade 3, if prevents normal everyday activities or requires significant medical intervention).
+\DIFdelbegin %DIFDELCMD < \item %%%
+\DIFdel{Parental satisfaction with vaccination: to }\DIFdelend \DIFaddbegin 
 
- \subsection*{Vaccine Satisfaction}
+ \subsection*{\DIFadd{Vaccine Satisfaction}}
 
-To assess parental dissatisfaction with vaccination in each group after each scheduled vaccine encounter, the following will be collected:
+\DIFadd{To }\DIFaddend assess parental dissatisfaction with vaccination in each group after each scheduled vaccine encounter, the following will be collected:
  \begin{enumerate}
      \item (Stage 1 infants) - Primary caregiver reported satisfaction with the vaccination experience on a 5-point Likert scale (from very satisfactory to very unsatisfactory) on day 7 after vaccination at 2, 4, 6, and 18 months of age
      \item (Stage 2 infants, first 300 enrolments at TKI) - Primary caregiver reported satisfaction with the vaccination experience on a 5-point Likert scale (from very satisfactory to very unsatisfactory) on day 7 after vaccination at 2, and 18 months of age.
  \end{enumerate}
+\DIFdelbegin %DIFDELCMD < \end{enumerate}
+%DIFDELCMD < %%%
+\DIFdelend 
 
 \section*{Randomisation}
 
@@ -516,9 +628,9 @@ The randomisation codes are password-protected and held by the trial statisticia
 
 \section*{Blinding}
 
-An electronic copy of the randomisation list is distributed by the study statistician to the unblinded pharmacist for printing and concealment.
-The randomisation list is concealed from all blinded research staff in a non-transparent envelope until completion of the study.
-An unblinded pharmacist or research nurse obtains the next contiguous allocation from the concealed list (i.e. the lowest available randomisation number) and prepares the study or comparator vaccine into a clear 1 ml ready administer syringe, labelled with the study participant's number and their identifiers.
+\DIFdelbegin \DIFdel{The allocation sequence }\DIFdelend \DIFaddbegin \DIFadd{An electronic copy of the randomisation list is distributed by the study statistician to the unblinded pharmacist for printing and concealment.
+The randomisation list }\DIFaddend is concealed from all blinded research staff in a non-transparent envelope until completion of the study.
+An unblinded pharmacist or research nurse obtains the next contiguous allocation \DIFaddbegin \DIFadd{from the concealed list (i.e. the lowest available randomisation number) }\DIFaddend and prepares the study or comparator vaccine into a clear 1 ml ready administer syringe, labelled with the study participant's number and their identifiers.
 The syringes are covered to prevent unblinding.
 At enrolment, vaccines may be administered by either a blinded, or an unblinded nurse.
 If unblinded, this nurse has no further involvement in the follow-up of the participant.
@@ -533,7 +645,8 @@ Code breaks will be authorised by the coordinating principal investigator and wi
 
 A maximum sample size of 3,000 participants is planned; 150 participants in stage 1 and up to 2,850 in stage 2.
 In accordance with trial simulations of the above design, we estimated the trial would have 85\% power to detect a reduction in IgE-mediated food allergy by 12 months of age from 10\% to 7\% while controlling the probability of a type I error at approximately 5\%.
-This effect size was selected on the basis of consultation with clinical stakeholders.  
+\DIFaddbegin \DIFadd{This effect size was selected on the basis of consultation with clinical stakeholders.  
+}\DIFaddend 
 
 The sample size for this study is adaptive, therefore the actual trial sample size may be less than 3,000 participants. Based on simulations undertaken for the trial design, the actual sample size is likely to be at least 1,000 participants given the expected accrual rates and timing of the first interim analysis.
 We estimated a 69\% probability of stopping early for futility if the null were true, and in the alternative scenario (reduction from 10\% to 7\% in the primary outcome), we estimated 59\% probability of stopping early for expected success.
@@ -618,7 +731,7 @@ The planned analysis populations are defined as in Table \ref{tab:analysis-sets}
 		Per-protocol (PP) & All randomised participants who received as planned the vaccine strategy to which they were randomised, and who completed the whole study period according to the protocol (satisfied inclusion and exclusion criteria, and visits as scheduled).
 		\\
 		Stage 1 assays (ITT) & All participants in the ITT set who were enrolled under stage 1 protocol at the Perth Children's Hospital (PCH)/Telethon Kids Institute (TKI). \\
-		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at PCH/TKI site and who met none of the stage 1 per-protocol exclusion criteria and who did not receive any contraindicated vaccines or medications for stage 1.\\
+		Stage 1 assays (PP) & All participants in the per-protocol set who were enrolled under stage 1 protocol at PCH/TKI site and who met none of the stage 1 \DIFdelbeginFL \DIFdelFL{elimination }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{per-protocol exclusion }\DIFaddendFL criteria and who did not receive any contraindicated vaccines or medications for stage 1.\\
 		Stage 1+2 assays (ITT) & All participants in the ITT  who were enrolled under stage 1 protocol or under the stage 2 protocol at PCH/TKI who consented for the blood samples. \\
 		Stage 1+2 assays (PP) & All participants in the stage 1 assay set with the inclusion of the additional participants enrolled under the stage 2 protocol at PCH/TKI who consented for the blood samples and who satisfied all stage 1 and 2 inclusion/exclusion criteria. \\
 		\hline
@@ -631,8 +744,8 @@ The planned analysis populations are defined as in Table \ref{tab:analysis-sets}
 Descriptive counts and proportions of the primary outcome will be tabulated by treatment group, including the number of inconclusive results.
 
 Inferences for the primary outcome will be based on Bayesian models.
-Each model will be inferred separately for the ITT and PP analysis sets.
-Interest lies in the measure of effect of assignment to the study vaccine on the primary endpoint relative to the comparator vaccine, denoted by \(\delta\).
+\DIFaddbegin \DIFadd{Each model will be inferred separately for the ITT and PP analysis sets.
+}\DIFaddend Interest lies in the measure of effect of assignment to the study vaccine on the primary endpoint relative to the comparator vaccine, denoted by \(\delta\).
 Depending on the model, this might represent the difference in proportions meeting the primary outcome, or some transformation of these proportions (log odds-ratio).
 In either case, the primary statistical hypotheses are:
 $$
@@ -688,12 +801,13 @@ Interim analyses begin after 200 subjects have complete primary outcome data.
 Subsequent interim analyses will occur after every additional 200 subjects with complete primary outcome data until either a stopping rule is met, or enrolment completed.
 Once a decision to stop has been made, or enrolment has reached the maximum sample size, enrolment will cease and all participants will be followed to study completion.
 
-Due to the timing of the primary outcome, the number of interim analyses is conditional on enrolment rates.
+\DIFaddbegin \DIFadd{Due to the timing of the primary outcome, the number of interim analyses is conditional on enrolment rates.
 Under the assumed accrual rate (Table \ref{tab:scenarios}), approximately 10 interim analyses are expected.
+}
 
 
-The process for interim decisions is as follows.
-Let $\mathbb P(\delta < 0|D_k)$ denote the posterior probability of superiority under the specified model conditional on data, $D_k$, at interim $k=1,...,K$.
+\DIFaddend The process for interim decisions is as follows.
+Let $\mathbb P(\delta < 0|D_k)$ denote the posterior probability of superiority under the specified model \DIFdelbegin \DIFdel{given dataup to interim $k=1,2,...,K$ where complete data from $n_k$ participants are available}\DIFdelend \DIFaddbegin \DIFadd{conditional on data, $D_k$, at interim $k=1,...,K$}\DIFaddend .
 We specify a prediction model, $f(\tilde D_k|D_k)$ for future outcome data $\tilde D_k$ that uses the data observed so far, marginalised over any uncertainty in the prediction model parameters.
 Using predictions of the primary outcome for subjects enrolled who are yet to complete follow-up, as well as subjects yet to be enrolled, the stopping decision is based on the predicted outcome of the trial (in terms of the decision rule used at the final analysis) if enrolment were stopped now (with follow-up completed on enrolled participants), or continued to the maximum sample size, given what has been observed up to interim $k$.
 
@@ -711,7 +825,7 @@ This is two independent Beta-Binomial distributions conditional on the observed 
 
 Two stopping rules are specified: 1) expected success and 2) futility.
 At each planned interim analysis $k=1,2,...,K$, let $n_i^k$ denote the number of participants in arm $i$ who have reached the primary endpoint by the time of interim $k$.
-Let $y_i^k$ denote the number of participants in arm $i$ out of $n_i^k$ who met the primary outcome criteria, and $D_k$ denote the available data.
+Let $y_i^k$ denote the number of participants in arm $i$ out of $n_i^k$ who \DIFdelbegin \DIFdel{had a response }\DIFdelend \DIFaddbegin \DIFadd{met the primary outcome criteria, }\DIFaddend and $D_k$ denote \DIFdelbegin \DIFdel{all }\DIFdelend the available data.
 In addition to the participants with observed outcomes at interim $k$, there are $m_i^k$ participants enrolled in arm $i$, of which some unknown $\tilde w_i^k$ will have a future response. There are also $l_i^k$ participants who could still be enrolled into arm $i$ (in 1:1 allocation up to maximum sample size) of which some unknown $\tilde z_i^k$ will have a future response.
 
 Using the prediction model and primary analysis model, the following values are calculated
@@ -730,7 +844,7 @@ d(D_k)=\begin{cases}
 \text{continue to analysis }k+1 &\text{otherwise}
 \end{cases} \quad k=1,...,K
 $$
-where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ for all $k$ which were selected based on simulations (see \nameref{sec:oc}).
+where $q=0.95$, $\overline{c}_k=0.95$, and $\underline{c}_k=0.05$ for all $k$ which were selected based on simulations \DIFaddbegin \DIFadd{(see }\nameref{sec:oc}\DIFadd{)}\DIFaddend .
 
 \subsection*{Analysis of Secondary Outcomes}
 
@@ -744,46 +858,49 @@ These models will adjust for the same covariates as in the adjusted model for th
 \subsubsection*{Laboratory - stage 1 atopic immunophenotypic response}
 
 The sensitivity of the assay for total IgE and antigen-specific IgE concentrations will be reported. 
-Results outside the limits of detection will be reported as below or above the limit of quantification. 
+Results outside the limits of detection will be reported as \DIFdelbegin \DIFdel{above or below the detection limit }\DIFdelend \DIFaddbegin \DIFadd{below or above the limit of quantification}\DIFaddend . 
 For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed from the unit scale and concentrations outside detection limits will be treated as censored.
 
 For each outcome, we will report by treatment group and visit for the stage 1 assay analysis sets the following descriptive summaries:
 \begin{itemize}
 	\item the median, IQR, and range of concentrations
 	\item the proportion of missing concentrations
-	\item the proportion of concentrations below or above limits of quantification
-	\item the proportion of concentrations exceeding the positive response threshold (see page \pageref{lab:sero-thresholds})
-	\item Kaplan-Meier plots of concentrations
+	\item the proportion of concentrations \DIFdelbegin \DIFdel{above/below detection limits }\DIFdelend \DIFaddbegin \DIFadd{below or above limits of quantification
+	}\DIFaddend \item the proportion of concentrations exceeding the positive response threshold \DIFaddbegin \DIFadd{(see page \pageref{lab:sero-thresholds})
+	}\DIFaddend \item Kaplan-Meier plots of concentrations
 \end{itemize}
 
 Inferences for geometric mean concentrations (GMC) and geometric mean ratios (GMR) between study groups will assume censored normal regression models for log-concentrations. 
 Univariate models will be fit for each visit with treatment specific means, and a multivariate model for all visits with unstructured covariance matrices and visit by treatment specific means.
 If issues arise with the covariance structure, a simpler covariance model will be assumed, such as heterogeneous compound symmetry.
 Priors on mean parameters will be normal with mean 0 and standard deviation 10. 
-An LKJ(1) prior is specified on the correlation matrix, and half-Cauchy with location 0 and scale 10 on the marginal standard deviation parameters.
+An LKJ(1) prior is specified on the correlation matrix, and \DIFdelbegin \DIFdel{truncated Cauchy with mean }\DIFdelend \DIFaddbegin \DIFadd{half-Cauchy with location }\DIFaddend 0 and \DIFdelbegin \DIFdel{standard deviation }\DIFdelend \DIFaddbegin \DIFadd{scale }\DIFaddend 10 on the marginal standard deviation parameters.
 If the assumptions of the censored regression model are inappropriate then two-part models may be considered to separate modelling of detection and concentration at each visit.
 
-Inferences for relative proportions exceeding positive response threshold by study group will assume logistic regression models with a fixed term for treatment group, visit, and their interaction, and random intercepts for participants.
+Inferences for relative proportions exceeding positive response threshold by study group will assume logistic regression models with a fixed term for treatment group, visit, and their interaction\DIFaddbegin \DIFadd{, and random intercepts for participants}\DIFaddend .
 
 \subsubsection*{Laboratory - stage 1 and 2 vaccine response}
 
 The sensitivity of each assay will be reported. 
-Results outside the limits of detection will be reported as below or above the limit of quantification.  
+Results outside the limits of detection will be reported as \DIFdelbegin \DIFdel{above or below the detection limit }\DIFdelend \DIFaddbegin \DIFadd{below or above the limit of quantification}\DIFaddend .  
 For analyses of concentrations, measurements will be $\text{log}_{10}$ transformed and concentrations outside the detection limits will be treated as censored.
 
 For each outcome, we will report by treatment group and visit for the stage 1 and stage 1+2 (PT only) assay analysis sets:
 \begin{itemize}
-	\item the median, IQR, and range of concentrations
+	\item the median\DIFaddbegin \DIFadd{, IQR, }\DIFaddend and range of concentrations
 	\item the proportion of missing concentrations
-	\item the proportion of concentrations below the limit of quantification
-	\item the proportion of concentrations exceeding the seroprotective/seropositivity thresholds (see page \pageref{lab:sero-thresholds})
-	\item the proportion of participants with a 4-fold or greater increase in their concentration from 18 to 19 months 
+	\item the proportion of concentrations \DIFdelbegin \DIFdel{above/below detection limits
+	}\DIFdelend \DIFaddbegin \DIFadd{below the limit of quantification
+	}\DIFaddend \item the proportion of concentrations exceeding the seroprotective/seropositivity thresholds \DIFaddbegin \DIFadd{(see page \pageref{lab:sero-thresholds})
+	}\DIFaddend \item the proportion of participants with a 4-fold or greater increase in their concentration from 18 to 19 months 
 	\item Kaplan-Meier plots of concentrations
 \end{itemize}
 
 Inferences for GMC, GMR, and proportions will use the same modelling approach as for the atopic immunophenotypic response outcomes.
 
-Non-inferiority of the wP vaccine strategy compared to the standard aP vaccine strategy with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMR \cite{who}.
+Non-inferiority of the wP vaccine strategy compared to the standard aP vaccine strategy with respect to PT will be assessed against a non-inferiority margin of 2/3 on the GMR \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{who}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend .
 That is, if the GMR for a particular antigen and visit is defined as
 $$
 \text{GMR} = \frac{\text{GMC}_\text{wP}}{\text{GMC}_\text{aP}}
@@ -795,12 +912,13 @@ $$
 
 \subsection*{Safety and Tolerability Outcomes}
 
-The number and proportions of infants in each study group with each type of solicited AE and their intensity grading will be summarised for each day following vaccination (day 0 to 6) for each vaccine occasion (2, 4, 6, and 18 months in stage 1; 2 and 18 months in stage 2).
-The number and proportion of infants in each study group with each type of solicited AE, and at least one type of solicited AE for each vaccine occasion will be reported.
+The number and proportions of infants in each study group with each type of solicited AE and their intensity grading will be summarised for each day following vaccination (day 0 to 6) for each vaccine occasion (2, 4, 6, and 18 months in stage 1; 2 and 18 months in stage \DIFdelbegin \DIFdel{2.
+}\DIFdelend \DIFaddbegin \DIFadd{2).
+}\DIFaddend The number and proportion of infants in each study group with each type of solicited AE, and at least one type of solicited AE for each vaccine occasion will be reported.
 
-\subsection*{Vaccine Satisfaction}
+\DIFaddbegin \subsection*{\DIFadd{Vaccine Satisfaction}}
 
-The responses for vaccination satisfaction of primary caregivers for infants in each study group on the 5-point Likert scale on day 7 after each vaccine occasion will be summarised by counts and proportions.
+\DIFaddend The responses for vaccination satisfaction of primary caregivers for infants in each study group on the 5-point Likert scale on day 7 after each vaccine occasion will be summarised by counts and proportions.
 The number of vaccination experiences reported as either unsatisfactory or very unsatisfactory on the Likert scale will be reported by study group as counts and proportions.
 
 \subsection*{Subgroup Analyses}
@@ -831,15 +949,18 @@ For models where MCMC sampling is required we will use Stan \cite{stanlang}.
 
 Results for the stage 1 atopic immunophenotypic response, vaccine response, and safety and tolerability outcomes will be reported by study group once complete follow-up has been obtained for the 150 participants in stage 1 up to their 7-month visit. This will not include SAEs or unsolicited AEs.
 
-\section*{Operating Characteristics}\label{sec:oc}
+\section*{Operating Characteristics}\DIFaddbegin \label{sec:oc}
+\DIFaddend 
 
 The operating characteristics of the OPTIMUM trial were estimated using Monte Carlo methods assuming 
 various scenarios for the data generating process.
+\DIFaddbegin 
 
-The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
-For example, based on the final row of Figure \ref{fig:superiority_16}, tresholds consistent with type I error of approximately 0.05 were identified.
+\DIFaddend The final thresholds were selected informally on the basis of their type I error, type II error, and expected sample size.
+\DIFaddbegin \DIFadd{For example, based on the final row of Figure \ref{fig:superiority_16}, tresholds consistent with type I error of approximately 0.05 were identified.
 These threshold combinations were then assessed for power and expected sample size, noting that many combination options result in similar opearting characteristics.
 Due to the common use of 0.95 as a one-sided threshold, the value $q=0.95$ was selected.
+}\DIFaddend 
 
 \subsection*{Scenarios}
 
@@ -882,8 +1003,8 @@ Expected success thresholds were fixed across all interim analyses and set to $\
 \subsection*{Results}
 
 Simulation results from all scenario combinations were based on 10,000 replications performed using R \cite{rlang}.
-Results are presented here only for the 16 per week accrual scenario; the other scenarios are available in a supplemental file (Additional file 1).
-The R functions and scripts used to simulate the trials and summarise the results are available at \url{https://github.com/jatotterdell/OPTIMUMsims}.
+Results are presented here only for the 16 per week accrual scenario; the other scenarios are available in a supplemental file (Additional file 1)\DIFaddbegin \DIFadd{.
+The R functions and scripts used to simulate the trials and summarise the results are available at }\url{https://github.com/jatotterdell/OPTIMUMsims}\DIFaddend .
 
 Figures \ref{fig:superiority_16} and \ref{fig:expected_ss_16} present the probability of deciding superiority at the final analysis (power) and expected sample size respectively over the grid of effect sizes and decision thresholds assuming constant accrual of 16 participants per week.
 Figures \ref{fig:stop_expect_success_16} and \ref{fig:stop_futility_16} present marginal stopping probabilities for expected success and futility respectively.
